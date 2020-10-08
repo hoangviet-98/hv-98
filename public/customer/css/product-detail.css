@@ -1,0 +1,114 @@
+.product_info {
+    float: left;
+    position: relative;
+    width: 33%;
+    margin: 0 1% 0 1%;
+}
+
+.area_price>strong {
+    color: #333;
+    font-weight: normal;
+}
+
+.area_price strong {
+    display: inline-block;
+    overflow: hidden;
+    font-size: 20px;
+    color: #bf081f;
+    vertical-align: middle;
+    margin-right: 5px;
+    position: relative;
+}
+
+.area_promotion {
+    display: block;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    position: relative;
+    margin: 5px 10px 12px;
+    background: #fff;
+    padding-bottom: 10px;
+}
+
+.area_promotion strong {
+    display: block;
+    overflow: hidden;
+    font-size: 15px;
+    color: #333;
+    padding: 10px 15px 8px 15px;
+    text-transform: uppercase;
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.area_promotion strong i {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: #666;
+    display: block;
+    text-transform: none;
+    padding-top: 1px;
+}
+
+.area_promotion .infopr span {
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    color: #333;
+    padding: 0 15px 5px 40px;
+}
+
+.area_order {
+    display: block;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.area_order .buy_now {
+    display: block;
+    overflow: hidden;
+    padding: 7px 0;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    background: #fd6e1d;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fd6e1d), to(#f59000));
+    background: -webkit-linear-gradient(top, #f59000, #fd6e1d);
+    background: -moz-linear-gradient(top, #f59000, #fd6e1d);
+    background: -ms-linear-gradient(top, #f59000, #fd6e1d);
+    background: -o-linear-gradient(top, #f59000, #fd6e1d);
+}
+
+.callorder {
+    display: block;
+    overflow: hidden;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #333;
+    margin-top: -10px;
+}
+
+.callorder .ct {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.callorder span {
+    display: inline-block;
+    padding: 5px 0 0;
+}
+.area_order span {
+    display: block;
+    font-size: 13px;
+    color: #fff;
+    text-transform: none;
+    padding-top: 3px;
+}

@@ -1,0 +1,24 @@
+.error-text
+{
+    color: red;
+}
+.responsive {
+    width: 100px;
+    height: auto;
+}
+.image_edit {
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+}
+.image_detail{
+    width: 100%;
+    margin-top: 20px;
+    height: 130px;
+    object-fit: cover;
+}
+
+table, th, td {
+    text-align: center;
+    /*margin-left: 50px;*/
+}

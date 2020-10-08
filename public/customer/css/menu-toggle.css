@@ -1,0 +1,83 @@
+/*#menu {*/
+/*    height: 30px;*/
+/*}*/
+.wpb_wrapper div img {
+    border: 1px solid #ebe3e359;
+}
+.nd_options_position_relative {
+    position: relative;
+}
+/*.nd_options_section {*/
+/*    width: 100%;*/
+/*    float: left;*/
+/*}*/
+.nd_options_box_sizing_border_box {
+    box-sizing: border-box;
+}
+.nd_options_padding_15 {
+    padding: 15px;
+}
+.nd_options_text_align_right {
+    text-align: right;
+}
+.nd_options_display_block {
+    display: block;
+}
+.nd_options_navigation_4 div > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0px;
+    text-align: center;
+}
+/*_____________________________*/
+.nd_options_navigation_4 div > ul > li {
+    display: inline-block;
+    padding: 0px;
+}
+.nd_options_navigation_4 div li a {
+    line-height: 20px;
+    text-transform: uppercase;
+}
+.nd_options_navigation_4 div li a {
+    color: #727475;
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: lighter;
+    letter-spacing: 3px;
+}
+a {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.nd_options_navigation_4 div > ul li > ul.sub-menu {
+    z-index: 999;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: none;
+    margin-left: -20px;
+    padding-top: 16px;
+    width: 200px;
+}
+
+.nd_options_navigation_4 div > ul li > ul.sub-menu > li {
+    padding: 10px 20px;
+}
+.nd_options_navigation_4 div > ul li > ul.sub-menu > li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f1f1f1;
+    text-align: left;
+    background-color: #ffffff;
+    position: relative;
+    box-shadow: 0px 2px 5px #f1f1f1;
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+.nd_options_navigation_4 div > ul {
+    list-style: none;
+}
