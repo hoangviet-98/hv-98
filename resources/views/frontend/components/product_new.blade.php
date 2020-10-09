@@ -1,5 +1,5 @@
 @foreach($productsNew as $new)
-    <div class="col-md-3 col-sm-4">
+    <div class="col-md-3 col-sm-4 col-sm-6">
         <div class="single-post" style="margin-bottom: 40px">
             <div class="post-thumb">
                 <a href="{{route('get.detail.product', [$new->pro_slug, $new->id])}}">
@@ -16,6 +16,7 @@
                 </div>
                 <div class="postexcerpt">
                     <p style="height: 40px">{{$new->pro_name}}</p>
+                    <p style="color: red;">{{number_format($new->pro_price)}} vnd</p>
                     <hr>
                     <a href="{{route('add.shopping.cart', $new->id)}}"
                        class="add_to_cart">ADD TO CART</a></div>
