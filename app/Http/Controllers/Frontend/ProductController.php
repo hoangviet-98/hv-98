@@ -13,9 +13,10 @@ class ProductController extends FrontendController
         parent::__construct();
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $products = Product::all();
+//        if($name = $request->k) $products->where('pro_name', 'like', '%'.$name.'%');
         return view('frontend.pages.product.index', compact('products'));
     }
 

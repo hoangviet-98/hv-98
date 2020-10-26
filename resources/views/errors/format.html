@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>
+        Manage-CIC
+    </title>
+    <!-- Favicon icon -->
+    <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="images/favicon.png"
+    />
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+            crossorigin="anonymous"
+    />
+
+    <!-- Pignose Calender -->
+    <link
+            href="./plugins/pg-calendar/css/pignose.calendar.min.css"
+            rel="stylesheet"
+    />
+    <!-- Chartist -->
+    <link rel="stylesheet" href="./plugins/chartist/css/chartist.min.css"/>
+    <link
+            rel="stylesheet"
+            href="./plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css"
+    />
+    <!-- Custom Stylesheet -->
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css-1/cic-manage.css" rel="stylesheet"/>
+
+    <style></style>
+</head>
+<body>
+<!--*******************
+Preloader start
+********************-->
+<div id="preloader">
+    <div class="loader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle
+                    class="path"
+                    cx="50"
+                    cy="50"
+                    r="20"
+                    fill="none"
+                    stroke-width="3"
+                    stroke-miterlimit="10"
+            />
+        </svg>
+    </div>
+</div>
+<!--*******************
+Preloader end
+********************-->
+
+<!--**********************************
+Main wrapper start
+***********************************-->
+<div id="main-wrapper">
+    <!--**********************************
+    Header start
+***********************************-->
+    <div class="header" style="width: 100%; margin: -7px">
+        <div class="header-content clearfix">
+            <div class="header-left">
+                <div class="input-group icons">
+                    <div class="rounded">
+                        <input
+                                type="search"
+                                class="form-control search"
+                                placeholder="Search"
+                                aria-label="Search"
+                                style="position: static"
+                        />
+                    </div>
+
+                    <div class="drop-down animated flipInX d-md-none">
+                        <form action="#">
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Search"
+                            />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--**********************************
+    Header end ti-comment-alt
+***********************************-->
+
+    <!--**********************************
+    Sidebar start
+***********************************-->
+    <div class="nk-sidebar">
+        <div class="nk-nav-scroll">
+            <ul class="metismenu" id="menu">
+                <li class="nav-label">Dashboard</li>
+                <li>
+                    <a
+                            class="has-arrow"
+                            href="javascript:void()"
+                            aria-expanded="false"
+                    >
+                        <i class="icon-speedometer menu-icon"></i
+                        ><span class="nav-text">Dashboard</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li><a href="./index.html">Home 1</a></li>
+                        <li><a href="./test-mobile.html">Lead</a></li>
+
+                        <!-- <li><a href="./index-2.html">Home 2</a></li> -->
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--**********************************
+    Sidebar end
+***********************************-->
+
+    <!--**********************************
+    Content body start
+***********************************-->
+    <div class="content-body" style="display: inline-block">
+        <div class="container status-2" style="margin-top: 20px;">
+            <div class="row" style="
+                    margin: -5px;
+                    background-color: #fff;
+                    border-radius: 8px;
+                ">
+                <div class="col-md-4 item-first">
+                    <button type="button" class="btn mb-1 btn-rounded btn-outline-success hv-sub-first">
+                        <span class="tab-2">Active</span>
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn mb-1 btn-rounded btn-outline-warning hv-sub-first">
+                        <span class="tab-2">Stop</span>
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn mb-1 btn-rounded btn-outline-danger hv-sub-first">
+                        <span class="tab-2">Report</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- TEST -->
+        <div class="section" style="background-color:#fff; border-radius: 8px; margin:10px; margin-right: 18px;">
+            <div
+                    class="row">
+                <div class="col-md-2 all-item">
+                    <button
+                            type="button"
+                            class="btn mb-1 btn-rounded btn-primary hv-sub-4-1"
+                    >
+                        <span class="tab-1">All</span>
+                    </button>
+                </div>
+                <div class="col-md-2">
+                    <button
+                            type="button"
+                            class="btn mb-1 btn-rounded btn-outline-dark hv-sub-4"
+                    >
+                        <span class="tab-2">Cancel</span>
+                    </button>
+                </div>
+                <div class="col-md-2">
+                    <button
+                            type="button"
+                            class="btn mb-1 btn-rounded btn-outline-success hv-sub-4"
+                    >
+                        <span class="tab-3">Done</span>
+                    </button>
+                </div>
+                <div class="col-md-2">
+                    <button
+                            type="button"
+                            class="btn mb-1 btn-rounded btn-outline-danger hv-sub-4"
+                    >
+                        <span class="tab-4">Wrong</span>
+                    </button>
+                </div>
+                <div class="col-md-2">
+                    <button
+                            type="button"
+                            class="btn mb-1 btn-rounded btn-outline-warning hv-sub-4"
+                    >
+                        <span class="tab-5">Pending</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- END TEST -->
+    </div>
+
+
+    <div class="content-body-detail">
+
+        <div
+                class="top-2"
+                style="
+                    margin: 10px;
+                    background-color: #fff;
+                    border-radius: 8px;
+                ">
+            <div class="container">
+                <div class="row component-2" id="info" style="display: flex; " onclick="copyInformations('#info')">
+                    <div class="col-md-6 name">
+                        <div class="name">
+                            <h4 class="name-user">
+                                <a id="fullName1" href="#">Cong Tang Ton Nu HOang Thien An Hoang Truong</a>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 cmt">
+                        <div class="address">
+                            <h7>444555666777</h7>
+                        </div>
+                    </div>
+                    <a style="display: none;">
+                        <i class="fa fa-address-book fab" data-toggle="tooltip" data-html="true" aria-hidden="true"
+                           data-original-title="<em>CIC Tin dung chi TIet</em>"><span style="display: none;">Tin Dung Chi Tiet</span></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-row">
+                <div
+                        class="row"
+                        style="width: 100%; margin: 3px 0 0 3px"
+                >
+                    <div class="col-t2-4">
+                        <button
+                                type="button"
+                                class="btn mb-1 btn-rounded btn-warning hv-sub-4"
+                                data-toggle="tooltip" data-html="true"
+                                data-original-title="<em>CIC Tin dung chi TIet</em>"
+                                style="margin-top: 3px;"
+                        >
+                            <span class="tab-3" style="color: #fff; margin-left: -4px;">CIC 06</span>
+                        </button>
+                    </div>
+                    <div class="col-t2-t4">
+                        <button type="button" class="btn mb-1 btn-rounded btn-outline-danger hv-sub-4 info"
+                                style="margin-top: -3px;">
+                            <span class="tab-2">Sai info</span>
+                        </button>
+                    </div>
+                    <!-- <div class="col-t2-t4">
+                    <button type="button" class="btn mb-1 btn-rounded btn-outline-warning hv-sub-4" style="margin-top: -3px;">
+                        <span class="tab-5">Pending</span>
+                    </button>
+                    </div> -->
+                    <div class="col-t2-t4">
+                        <a>
+                            <i class="fa fa-cloud-download fab" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="col-t2-t4">
+                        <div class="time">
+                            16:02-17/10
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+                class="top-2"
+                style="
+            margin: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+    ">
+            <div class="container">
+                <div class="row component-2" id="info" style="display: flex; " onclick="copyInformations('#info')">
+                    <div class="col-md-6 name">
+                        <div class="name">
+                            <h4 class="name-user">
+                                <a id="fullName2" href="#">Nguyen Tran Tuan</a>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 cmt">
+                        <div class="address">
+                            <h7>444555666777</h7>
+                        </div>
+                    </div>
+                    <a style="display: none;">
+                        <i class="fa fa-address-book fab" data-toggle="tooltip" data-html="true" aria-hidden="true"
+                           data-original-title="<em>CIC Tin dung chi TIet</em>"><span style="display: none;">Tin Dung Chi Tiet</span></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-row">
+                <div
+                        class="row"
+                        style="width: 100%; margin: 3px 0 0 3px"
+                >
+                    <div class="col-t2-4">
+                        <button
+                                type="button"
+                                class="btn mb-1 btn-rounded btn-warning hv-sub-4"
+                                data-toggle="tooltip" data-html="true"
+                                data-original-title="<em>CIC Tin dung chi TIet</em>"
+                                style="margin-top: 3px;"
+                        >
+                            <span class="tab-3" style="color: #fff; margin-left: -4px;">CIC 06</span>
+                        </button>
+                    </div>
+                    <div class="col-t2-t4">
+                        <button type="button" class="btn mb-1 btn-rounded btn-outline-danger hv-sub-4 info"
+                                style="margin-top: -3px;">
+                            <span class="tab-2">Sai info</span>
+                        </button>
+                    </div>
+                    <!-- <div class="col-t2-t4">
+                    <button type="button" class="btn mb-1 btn-rounded btn-outline-warning hv-sub-4" style="margin-top: -3px;">
+                        <span class="tab-5">Pending</span>
+                    </button>
+                    </div> -->
+                    <div class="col-t2-t4">
+                        <a>
+                            <i class="fa fa-cloud-download fab" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="col-t2-t4">
+                        <div class="time">
+                            16:02-17/10
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- #/ container -->
+</div>
+<!--**********************************
+Content body end
+***********************************-->
+
+<!--**********************************
+Footer start
+***********************************-->
+<div class="footer">
+    <div class="copyright">
+        <div
+                class="row-footer"
+                style="width: 100%; margin: 3px 0 0 3px"
+        >
+            <div class="col-f1">
+                <button
+                        type="button"
+                        class="btn mb-1 btn-rounded btn-outline-dark hv"
+                >
+                    Tra CIC
+                </button>
+            </div>
+            <div class="col-f1">
+                <button
+                        type="button"
+                        class="btn mb-1 btn-rounded btn-outline-info hv"
+                >
+                    Nạp Tiền
+                </button>
+            </div>
+            <div class="col-f1">
+                <button
+                        type="button"
+                        class="btn mb-1 btn-rounded btn-outline-info hv"
+                >
+                    Bảng Tính
+                </button>
+            </div>
+            <div class="col-f1">
+                <button
+                        type="button"
+                        class="btn mb-1 btn-rounded btn-outline-danger hv"
+                >
+                    Hỗ trợ
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--**********************************
+Footer end
+***********************************-->
+</div>
+<!--**********************************
+Main wrapper end
+***********************************-->
+
+<!--**********************************
+Scripts
+***********************************-->
+<script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"
+></script>
+
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"
+></script>
+<script src="plugins/common/common.min.js"></script>
+<script src="js/custom.min.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/gleek.js"></script>
+<script src="js/styleSwitcher.js"></script>
+
+<!-- Chartjs -->
+<script src="./plugins/chart.js/Chart.bundle.min.js"></script>
+<!-- Circle progress -->
+<script src="./plugins/circle-progress/circle-progress.min.js"></script>
+<!-- Datamap -->
+<script src="./plugins/d3v3/index.js"></script>
+<script src="./plugins/topojson/topojson.min.js"></script>
+<script src="./plugins/datamaps/datamaps.world.min.js"></script>
+<!-- Morrisjs -->
+<script src="./plugins/raphael/raphael.min.js"></script>
+<script src="./plugins/morris/morris.min.js"></script>
+<!-- Pignose Calender -->
+<script src="./plugins/moment/moment.min.js"></script>
+<script src="./plugins/pg-calendar/js/pignose.calendar.min.js"></script>
+<!-- ChartistJS -->
+<script src="./plugins/chartist/js/chartist.min.js"></script>
+<script src="./plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
+
+<script src="./js/dashboard/dashboard-1.js"></script>
+
+<script type="text/javascript">
+    function copyInformations(element) {
+
+        let $item = $('<input>');
+        $("body").append($item);
+        $item.val($(element).text()).select();
+        document.execCommand("copy");
+        $item.remove();
+
+    }
+
+    var fullName = $("#fullName1").html();
+    var names = fullName.split(' ');
+    var middleName = "";
+    for (var i = 1; i < names.length - 1; i += 1) {
+        middleName += names[i] + " ";
+    }
+    fullName = fullName.replace(middleName, "...");
+    $("#fullName1").html(fullName);
+
+
+    var fullName2 = $("#fullName2").html();
+    var names2 = fullName2.split(' ');
+    var middleName2 = "";
+    for (var i = 1; i < names2.length - 1; i += 1) {
+        middleName2 += names2[i] + " ";
+    }
+    fullName2 = fullName2.replace(middleName2, "...");
+    $("#fullName2").html(fullName2);
+
+</script>
+</body>
+</html>

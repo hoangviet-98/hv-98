@@ -9,7 +9,7 @@
                         class="nd_options_navigation_4 nd_options_navigation_type nd_options_text_align_right nd_options_display_none_all_responsive">
                         <div class="nd_options_display_block">
                             <div class="menu-spa-menu-container">
-                                <div class="list_pc">
+                                <div class="list_pc" style="display: flex; margin-left: 410px; text-align: center">
                                     <ul id="menu-spa-menu-1">
                                         <li class="menu-item">
                                             <a href="/" aria-current="page">
@@ -39,9 +39,9 @@
                                         <li class="menu-item ">
                                             <a href="{{route('get.schedule')}}">Đặt Lịch</a>
                                         </li>
-                                        <li class="menu-item ">
-                                            <a href="#">Khuyến mãi</a>
-                                        </li>
+{{--                                        <li class="menu-item ">--}}
+{{--                                            <a href="#">Khuyến mãi</a>--}}
+{{--                                        </li>--}}
                                         <li class="menu-item ">
                                             <a href="{{route('get.list.article')}}">Bài viêt</a>
                                         </li>
@@ -77,6 +77,15 @@
                                             <a href="{{route('get.list.shopping.cart')}}"><span>{{\Cart::count()}}</span></a>
                                         </li>
                                     </ul>
+                                    <div class="search-icon" >
+                                        <form action="" role="search" method="GET" style="width: 200px; margin-left: 20px ;display: flex">
+{{--                                            <form action="{{route('get.list.product')}}" role="search" method="GET" style="width: 200px; margin-left: 20px ;display: flex">--}}
+                                            <input type="text" name="k" value="{{Request::get('k')}}" style="height: 30px;" class="form-control" placeholder="Search Product ...">
+                                            <button type="submit" class="btnSearch">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
                                 <!--End PC-->
 

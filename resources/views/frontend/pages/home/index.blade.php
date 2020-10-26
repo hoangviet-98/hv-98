@@ -100,7 +100,7 @@
                 </div>
             @endif
         </div>
-        <div class="product" style="text-align: center; font-family: Open Sans, sans-serif;;margin-top: 50px">
+        <div class="product" style="text-align: center; font-family: Open Sans, sans-serif;margin-top: 50px">
             @if (isset($productHot))
                 <div class="container" style="border-top: 1px solid #e4e4e4" >
 {{--                    <div class="area-title">--}}
