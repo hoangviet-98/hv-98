@@ -2,7 +2,7 @@ Git clone npm install composer install composer dump-autoload php artisan key:ge
 
 php artisan storage:link
 
-copy .env.example to .env edit 5---APP_URL=http://localhost:8000 12---DB_DATABASE=beauty
+copy .env.example to .env edit 5---APP_URL=http://localhost:8000 12---DB_DATABASE=hv_beauty
 
 php artisan make:models Models/.....
 
