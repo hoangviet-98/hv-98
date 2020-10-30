@@ -201,25 +201,6 @@
                         />
                         <div class="indexstyle__ProductImages-qd1z2k-1 kQvKqX">
                             <div class="group-images">
-                                <div class="images">
-                                    <a class="active">
-                                        <div
-                                            alt="Bàn Phím Có Dây Dell KB216 - Đen - Hàng Chính Hãng"
-                                            src="https://salt.tikicdn.com/cache/w80/media/catalog/product/2/3/23884_ban_phim_dell_kb216b_01.u2409.d20170517.t091608.808367.jpg"
-                                        >
-                                            <div
-                                                src="https://salt.tikicdn.com/cache/w80/media/catalog/product/2/3/23884_ban_phim_dell_kb216b_01.u2409.d20170517.t091608.808367.jpg"
-                                                class="PictureV2__StyledWrapImage-tfuu67-0 jIKzUR"
-                                            >
-                                                <img
-                                                    src="https://salt.tikicdn.com/cache/w80/media/catalog/product/2/3/23884_ban_phim_dell_kb216b_01.u2409.d20170517.t091608.808367.jpg"
-                                                    alt="Bàn Phím Có Dây Dell KB216 - Đen - Hàng Chính Hãng"
-                                                    class="PictureV2__StyledImage-tfuu67-1 Dozqv"
-                                                />
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
                                 <div class="thumbnail">
                                     <div class="ImageLens__Wrapper-uaw433-0 jcyqbC">
                                         <div class="container">
@@ -313,8 +294,8 @@
                                         />
                                     </div>
                                     <h6>
-                                        Thương hiệu:
-                                        <a href="/thuong-hieu/dell.html">Dell</a>
+                                        Category:
+                                        <a href="">{{$productDetail->category->cat_name}}</a>
                                     </h6>
                                 </div>
                             </div>
@@ -378,13 +359,8 @@
                                         </div>
                                         <div class="group border-top">
                                             <ul class="list">
-                                                <li>Cổng giao tiếp USB</li>
-                                                <li>Màu đen bóng</li>
-                                                <li>
-                                                    Có đường thoát nước lớn hơn giúp
-                                                    việc thoát nước dễ dàng nhanh chóng,
-                                                    không đọng nước trên bàn phím
-                                                </li>
+                                                <li>{{$productDetail->pro_description}}</li>
+                                                <li>{{$productDetail->pro_description_seo}}</li>
                                             </ul>
                                         </div>
                                         <div class="group border-top">
@@ -410,117 +386,8 @@
                                             </div>
                                         </div>
                                         <div
-                                            class="DeliveryZone__StyledDeliveryZoneEmpty-sc-1maxvle-1 gQPDbi"
-                                        >
-                                            <div class="inner">
-                                                Bạn ơi hãy
-                                                <span>NHẬP ĐỊA CHỈ</span> nhận hàng để
-                                                được dự báo thời gian &amp; chi phí giao
-                                                hàng một cách chính xác nhất.
-                                            </div>
-                                        </div>
-                                        <div
                                             class="ProductReport__Wrapper-sc-1pdz2xs-0 beLPHp"
                                         ></div>
-                                    </div>
-
-                                    <div class="rightLike">
-                                        <div class="group">
-                                            <div
-                                                class="indexstyle__CurrentSeller-qd1z2k-9 joYxsO"
-                                            >
-                                                <div class="seller-info">
-                                                    <i class="tikicon icon-store"></i>
-                                                    <div>
-                                                        <a
-                                                            href="https://tiki.vn/cua-hang/tiki-trading"
-                                                            class="seller-name"
-                                                        >Tiki Trading</a
-                                                        >
-                                                        <p class="seller-description">
-                                                            Cam kết chính hiệu 100%
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <a
-                                                    href="https://tiki.vn/cua-hang/tiki-trading"
-                                                    class="btn-view-shop"
-                                                >Xem shop</a
-                                                >
-                                                <div class="seller-specification">
-                                                    <i
-                                                        class="tikicon icon-hoan-tien-2"
-                                                    ></i>
-                                                    <div>
-                                                        <div class="text">
-                                                            <b>Tiki hoàn tiền 111% </b>
-                                                            <div class="tooltip">
-                                                                <i
-                                                                    class="tikicon icon-info-grey"
-                                                                    style="
-                                                                margin-right: 0;
-                                                            "
-                                                                ></i>
-                                                                <p class="view">
-                                                                    Chính sách bồi
-                                                                    thường
-                                                                    <a
-                                                                        target="_blank"
-                                                                        href="https://drive.google.com/file/d/1po3r6qApp-q7JDB5kwGKujVtvInfO-ih/view?usp=sharing"
-                                                                    >Xem thêm</a
-                                                                    >
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                        <p class="text">
-                                                            Nếu phát hiện hàng giả
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="social-buttons">
-                                            <div
-                                                class="fb-like fb_iframe_widget"
-                                                data-href="/ban-phim-co-day-dell-kb216-den-hang-chinh-hang-p646020.html?spid=11605007"
-                                                data-width=""
-                                                data-layout="button_count"
-                                                data-action="like"
-                                                data-size="small"
-                                                data-show-faces="true"
-                                                data-share="true"
-                                                fb-xfbml-state="rendered"
-                                                fb-iframe-plugin-query="action=like&amp;app_id=220558114759707&amp;container_width=0&amp;href=https%3A%2F%2Ftiki.vn%2Fban-phim-co-day-dell-kb216-den-hang-chinh-hang-p646020.html%3Fspid%3D11605007&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small&amp;width="
-                                            >
-                                        <span
-                                            style="
-                                                vertical-align: bottom;
-                                                width: 128px;
-                                                height: 20px;
-                                            "
-                                        ><iframe
-                                                name="f368b0f2f31967c"
-                                                width="1000px"
-                                                height="1000px"
-                                                data-testid="fb:like Facebook Social Plugin"
-                                                title="fb:like Facebook Social Plugin"
-                                                frameborder="0"
-                                                allowtransparency="true"
-                                                allowfullscreen="true"
-                                                scrolling="no"
-                                                allow="encrypted-media"
-                                                src="https://www.facebook.com/v3.1/plugins/like.php?action=like&amp;app_id=220558114759707&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df14199e236bd034%26domain%3Dtiki.vn%26origin%3Dhttps%253A%252F%252Ftiki.vn%252Ff885b022587efc%26relation%3Dparent.parent&amp;container_width=0&amp;href=https%3A%2F%2Ftiki.vn%2Fban-phim-co-day-dell-kb216-den-hang-chinh-hang-p646020.html%3Fspid%3D11605007&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;size=small&amp;width="
-                                                style="
-                                                    border: none;
-                                                    visibility: visible;
-                                                    width: 128px;
-                                                    height: 20px;
-                                                "
-                                                class=""
-                                            ></iframe
-                                            ></span>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -550,8 +417,8 @@
 
     {{--Form Review--}}
 
-    <div class="component-rating" style="margin: 0 350px 20px 250px;">
-        <h3>Review Product :</h3>
+    <div class="component-rating" style="margin: 160px 350px 20px 250px; border-top: 1px solid #e4e4e4">
+        <h3 style="text-align: center">Review Product :</h3>
 {{--        <b>{{$productDetail->pro_total_rating}}</b>--}}
         <b>{{$productDetail->pro_name}}</b>
         <div class="component-rating_content" style="display: flex; align-items: center; border: 1px solid #ddd">

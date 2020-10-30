@@ -9,7 +9,7 @@
                         class="nd_options_navigation_4 nd_options_navigation_type nd_options_text_align_right nd_options_display_none_all_responsive">
                         <div class="nd_options_display_block">
                             <div class="menu-spa-menu-container">
-                                <div class="list_pc" style="display: flex; margin-left: 410px; text-align: center">
+                                <div class="list_pc" style=" margin-left: 410px; text-align: center">
                                     <ul id="menu-spa-menu-1">
                                         <li class="menu-item">
                                             <a href="/" aria-current="page">

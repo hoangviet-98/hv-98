@@ -2,8 +2,8 @@
     <div class="col-md-4 col-sm-4 col-xs-12">
         <div class="single-post" style="margin-bottom: 40px">
             <div class="post-thumb">
-                <a href="#">
-                    <img style="width: 350px; height: auto"
+                <a href="{{route('get.detail.article', [$aNews->a_slug, $aNews->id])}}">
+                    <img style="width: 200px; height: 250px" class="responsive"
                          src="{{ asset(pare_url_file($aNews->a_avatar)) }}" alt=""/>
                 </a>
             </div>

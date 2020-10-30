@@ -50,21 +50,22 @@
                             <div class="box-tools">
                                 <form class="form-inline" action="" style="margin-bottom: 30px">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Search Name Product ..."
-                                               name="name"
-                                               value="{{ \Request::get('name') }}">
-                                    </div>
-
-                                    <div class="form-group">
                                         <select name="cat" id="" class="form-control">
                                             <option value=""> Category</option>
                                             @if (isset($hv_category))
                                                 @foreach($hv_category as $category)
                                                     <option
-                                                        value="{{ $category->id }}" {{\Request::get('cat') ==$category->id ? "selected='selected'" : "" }} > {{$category->cat_name}} </option>
+                                                            value="{{ $category->id }}" {{\Request::get('cat') ==$category->id ? "selected='selected'" : "" }} > {{$category->cat_name}} </option>
                                                 @endforeach
                                             @endif
                                         </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Search Name Product ..."
+                                               name="name"
+                                               value="{{ \Request::get('name') }}">
+                                        <button type="submit" class="btn btn-default"  value="{{ \Request::get('name') }}"><i class="fa fa-search"></i>
+                                        </button>
                                     </div>
                                 </form>
                             </div>

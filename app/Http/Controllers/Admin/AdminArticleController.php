@@ -66,7 +66,8 @@ class AdminArticleController extends Controller
     public function edit($id)
     {
         $hv_article = Article::find($id);
-        return view('admin.article.edit', compact('hv_article'));
+        $hv_menu = $this->getMenu();
+        return view('admin.article.edit', compact('hv_article', 'hv_menu'));
     }
 
     public function update(Request $request, $id)

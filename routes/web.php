@@ -53,6 +53,8 @@ Route::group(['namespace' => 'Frontend'], function (){
 
 //Article
     Route::get('post', 'ArticleController@getListArticle')->name('get.list.article');
+    Route::get('post/{slug}-{id}', 'ArticleDetailController@articleDetail')->name('get.detail.article');
+
 
 // Schedule
     Route::get('schedule', 'ScheduleController@index')->name('get.schedule');

@@ -25,7 +25,7 @@
                                 <a href="index.html">Home</a>
                                 <span><i class="fa fa-angle-right"></i></span>
                             </li>
-                            <li class="category3"><span>Shop List</span></li>
+                            <li class="category3"><span>Article List</span></li>
                         </ul>
                     </div>
                 </div>
@@ -40,7 +40,8 @@
                     @if (isset($articles))
                         @foreach ($articles as $article)
                             <div class="article" style="padding-bottom: 10px ; margin-bottom: 10px ; border-bottom: 1px solid #f2f2f2; display: flex">
-                                <div class="article_avatar"><a href="#">
+                                <div class="article_avatar">
+                                    <a href="{{route('get.detail.article', [$article->a_slug, $article->id])}}">
                                         <img style="width: 200px; height: 120px"
                                              src="{{ asset(pare_url_file($article->a_avatar)) }}"  alt=""/>
                                     </a>
@@ -56,7 +57,7 @@
                     @endif
                 </div>
                 <div class="col-sm-4">
-                    RIGHT
+                    <div class="title"></div>
                 </div>
 
             </div>
