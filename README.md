@@ -23,12 +23,15 @@ Passwork : hoangtheviet
 
 Paypal account: 
 Sanbox Business Account 
-email:
-password: 
+email: sb-rbgln3742654@business.example.com
+
+password: 4PI+NaGZ
+
 
 Sanbox Personal Account 
-email:
-password: 
+email: sb-f95bf3756625@personal.example.com
+password: &cn*6T;9
+
 
 Client ID: 
 ATi4Iu5Rz9GgPbjosUjYPfJ8uQB6XvdhUtyrGjVJbi8YoB5eQ8a1gQA6SJRw2cpwfXjTxvbnodGQpamI
