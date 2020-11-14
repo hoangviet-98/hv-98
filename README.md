@@ -35,3 +35,13 @@ password: &cn*6T;9
 
 Client ID: 
 ATi4Iu5Rz9GgPbjosUjYPfJ8uQB6XvdhUtyrGjVJbi8YoB5eQ8a1gQA6SJRw2cpwfXjTxvbnodGQpamI
+
+Card Type: Visa
+
+Card Number: 4032032080036111
+
+Expiration Date: 01/2023
+
+CVV: 317
+
+
