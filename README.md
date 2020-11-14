@@ -17,3 +17,18 @@ Account :
 Admin : vietht098@gmail.com | staff_tx@gmail.com | staff_nk@gmail.com 
 User  : hoangviet180498@gmai.com | viethtgch16100@fpt.edu.vn
 Passwork : hoangtheviet
+
+
+
+
+Paypal account: 
+Sanbox Business Account 
+email:
+password: 
+
+Sanbox Personal Account 
+email:
+password: 
+
+Client ID: 
+ATi4Iu5Rz9GgPbjosUjYPfJ8uQB6XvdhUtyrGjVJbi8YoB5eQ8a1gQA6SJRw2cpwfXjTxvbnodGQpamI
