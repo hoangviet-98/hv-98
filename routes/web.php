@@ -24,7 +24,7 @@ Route::group(['namespace' => 'Auth', 'prefix' => 'account'], function () {
 });
 
 Route::group(['namespace' => 'Frontend'], function (){
-   Route::get('/','HomeController@index')->name('get.home');
+   Route::get('/home','HomeController@index')->name('get.home');
 
 //   Route::get('/404','HomeController@error_page')->name('get.errors');
 
@@ -36,14 +36,14 @@ Route::group(['namespace' => 'Frontend'], function (){
 
     Route::prefix('shopping')->group(function () {
         Route::get('/add/{id}', 'ShoppingCartController@addProduct')->name('add.shopping.cart');
-        Route::get('/category', 'ShoppingCartController@getListShoppingCart')->name('get.list.shopping.cart');
+        Route::get('/list', 'ShoppingCartController@getListShoppingCart')->name('get.list.shopping.cart');
         Route::get('/update-cart/{id}', 'ShoppingCartController@updateShoppingCart')->name('ajax_update.shopping.cart');
         Route::get('/delete-cart/{id}', 'ShoppingCartController@deleteProductItem')->name('delete.shopping.cart');
     });
 
     Route::group(['prefix' => 'cart', 'middleware' => 'check_user_login'], function () {
         Route::get('/pay', 'ShoppingCartController@getFormPay')->name('get.form.pay');
-        Route::post('/pay', 'ShoppingCartController@saveInfoShoppingCart');
+        Route::post('/pay', 'ShoppingCartController@saveInfoShoppingCart')->name('post.checkout');
     });
 
     Route::group(['prefix' => 'ajax', 'middleware' => 'check_user_login'], function () {
@@ -60,6 +60,6 @@ Route::group(['namespace' => 'Frontend'], function (){
     Route::get('schedule', 'ScheduleController@index')->name('get.schedule');
     Route::post('schedule', 'ScheduleController@saveInfoSchedule');
 
-    Route::get('service', 'ScheduleController@index')->name('get.schedule');
+//    Route::get('service', 'ScheduleController@index')->name('get.schedule');
 
 });

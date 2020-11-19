@@ -22,8 +22,8 @@ class RequestLogin extends FormRequest
     public function messages()
     {
         return [
-            'email.required'    => 'Khong duoc de trong',
-            'password.required'    => 'Khong duoc de trong',
+            'email.required'    => 'This field cannot be left blank',
+            'password.required'    => 'This field cannot be left blank',
 
         ];
     }

@@ -74,7 +74,5 @@ class AdminSpaController extends Controller
                 'message' => 'fail'
             ], 500);
         }
-
-        return redirect('/admin/spas')->with('success', 'Spa deleted!');
     }
 }

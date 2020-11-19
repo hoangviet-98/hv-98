@@ -24,19 +24,19 @@ class Transaction extends Model
 
     protected $status = [
         0 => [
-            'name' => 'Tiep nhan',
+            'name' => 'Receive',
             'class' => 'label-default'
         ],
         1 => [
-            'name' => 'Dang van chuyen',
+            'name' => 'Being transported',
             'class' => 'label-primary'
         ],
         2 => [
-            'name' => 'Da ban giao',
+            'name' => 'Delivered',
             'class' => 'label-info'
         ],
         -1 => [
-            'name' => 'da huy',
+            'name' => 'Cancelled',
             'class' => 'label-danger'
         ]
     ];

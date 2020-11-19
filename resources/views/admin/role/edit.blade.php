@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-sm-8 offset-sm-2">
                     <h1 class="display-3">Update a role</h1>
-                    <form method="post" action="{{ route('admin.get.update.role', $role->id) }}" enctype="multipart/form-data">
+                    <form method="post" action="" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
 

@@ -62,11 +62,8 @@
                                     <tr>
                                         <th style="width: 10px">ID</th>
                                         <th>Category Name</th>
-                                        <th>Avatar</th>
                                         <th>Active</th>
-                                        <th>Total Product</th>
-                                        <th>Description</th>
-                                        <th>Keywork</th>
+                                        <th>Product Details</th>
                                         <th colspan=3>Actions</th>
                                     </tr>
                                     </thead>
@@ -75,7 +72,6 @@
                                         <tr>
                                             <th>{{$category->id}}</th>
                                             <th>{{$category->cat_name}}</th>
-                                            <td>{{$category->cat_avatar	}}</td>
                                             <td>
                                                 <a href="{{ route('admin.get.action.category', ['active', $category->id]) }}"
                                                    class="label {{$category->getStatus($category->cat_active ) ['class'] }} ">
@@ -84,9 +80,7 @@
 
                                                 </a>
                                             </td>
-                                            <td>{{$category->cat_total_product	}}</td>
                                             <td>{{$category->cat_description	}}</td>
-                                            <td>{{$category->cat_keyword_seo	}}</td>
 
 
                                             <td>

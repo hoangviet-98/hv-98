@@ -45,33 +45,13 @@
                         </div>
                         <div class="box-header">
                             <h3 class="box-title"></h3>
-
-{{--                            <div class="box-tools">--}}
-{{--                                <div class="input-group input-group-sm" style="width: 150px;">--}}
-{{--                                    <input type="text" name="table_search" class="form-control pull-right"--}}
-{{--                                           placeholder="Search">--}}
-
-{{--                                    <div class="input-group-btn">--}}
-{{--                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i>--}}
-{{--                                        </button>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
                             <form class="form-inline" action="">
                                 <input type="text" class="form-control" value="{{\Request::get('id')}}" name="id"
                                        placeholder="ID">
                                 <input type="text" class="form-control" value="{{\Request::get('email')}}" name="email"
                                        placeholder="Email ...">
-                                <select name="status" class="form-control">
-                                    <option>Status</option>
-                                    <option>Xy ly</option>
-                                    <option>Tiep Nhan</option>
-                                    <option>Dang van chuyen</option>
-                                    <option>Da ban giao</option>
-                                    <option>Huy bo</option>
-                                </select>
                                 <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                <button type="submit" name="export" value="truae"
+                                <button type="submit" name="export" value="true"
                                         class="btn btn-success"
                                         style="width: 100px;"
                                         ><i class="fa fa-save"></i><span style="margin-left: 5px;">Export</span>
@@ -207,17 +187,17 @@
                                                                class="fa fa-trash-o action_delete">Delete </a></li>
                                                         <li>
                                                             <a href="{{route('admin.get.action.transactions', ['process', $item->id])}}">
-                                                                <i class="fa fa-ban"></i> Dang giao hang
+                                                                <i class="fa fa-ban"></i> Delivering
                                                             </a>
                                                         </li>
                                                         <li>
                                                             <a href="{{route('admin.get.action.transactions', ['success', $item->id])}}">
-                                                                <i class="fa fa-ban"></i> Da giao hang
+                                                                <i class="fa fa-ban"></i> Delivered
                                                             </a>
                                                         </li>
                                                         <li>
                                                             <a href="{{route('admin.get.action.transactions', ['cancel', $item->id])}}">
-                                                                <i class="fa fa-ban"></i> Da huy
+                                                                <i class="fa fa-ban"></i> Cancelled
                                                             </a>
                                                         </li>
                                                     </ul>
@@ -243,7 +223,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Chi tiết đơn hàng <b id="transaction_id"></b>
+                    <h5 class="modal-title" id="exampleModalLabel">Order Deatil <b id="transaction_id"></b>
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>

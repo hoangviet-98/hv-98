@@ -53,22 +53,19 @@
 @section('content')
 
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <section class="content-header">
-{{--            @include('admin.partial.content-header', ['name' => 'Content', ' ' ,'key' => 'Edit'])--}}
         </section>
         <div class="back-home">
             <p><a style="margin: 19px"
                   href="{{ route('admin.get.list.article') }}">
                     <i class="fa fa-arrow-circle-left"> </i>
-                    Về danh sách</a></p>
+                    Back</a></p>
         </div>
         <section class="content">
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="display-3">Update a Article</h1>
                     <form method="post" action="" enctype="multipart/form-data">
-
                     @csrf
                         <div class="form-group">
                             <label>Title :</label>

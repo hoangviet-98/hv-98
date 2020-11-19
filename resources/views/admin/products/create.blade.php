@@ -59,6 +59,11 @@
                                 <label>Amount:</label>
                                 <input type="number" class="form-control" name="pro_number" placeholder="10" min="1"
                                        max="100">
+                                @if($errors->has('pro_number'))
+                                    <span class="error-text">
+                  {{$errors->first('pro_number')}}
+                </span>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label for="description">Description:</label>
@@ -76,11 +81,21 @@
                             <div class="form-group">
                                 <label>Content:</label>
                                 <textarea name="pro_content" id="editor" class="form-control my-editor" rows="8"></textarea>
+                                @if($errors->has('pro_content'))
+                                    <span class="error-text">
+                  {{$errors->first('pro_content')}}
+                </span>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Description Sale:</label>
                                 <input type="text" class="form-control" name="pro_description_seo"
                                        value="{{old('pro_description_seo',isset($hv_category->pro_description_seo)?$hv_category->pro_description_seo : '')}}">
+                                @if($errors->has('pro_description_seo'))
+                                    <span class="error-text">
+                  {{$errors->first('pro_description_seo')}}
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Category</label>
@@ -90,6 +105,11 @@
                                         <option value="{{ $cat_id->id}}">{{$cat_id->cat_name}} </option>
                                     @endforeach
                                 </select>
+                                @if($errors->has('pro_category_id'))
+                                    <span class="error-text">
+                                {{$errors->first('pro_category_id')}}
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label for="price">Price:</label>
@@ -98,8 +118,8 @@
                                 >
                                 @if($errors->has('pro_price'))
                                     <span class="error-text">
-                  {{$errors->first('pro_price')}}
-                </span>
+                                {{$errors->first('pro_price')}}
+                                    </span>
                                 @endif
                             </div>
 

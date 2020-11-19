@@ -16,7 +16,7 @@
             <p><a style="margin: 19px"
                   href="{{ route('admin.get.list.spa') }}">
                     <i class="fa fa-arrow-circle-left"> </i>
-                    Về danh sách</a></p>
+                    Back</a></p>
         </div>
         <section class="content">
             <div class="row">
@@ -26,25 +26,26 @@
                             @csrf
                             <div class="form-group">
                                 <label for="spa_name">Spa Name:</label>
-                                <input type="text" class="form-control" name="spa_name"/>
+                                <input type="text" class="form-control" name="spa_name" required/>
                             </div>
                             <div class="form-group">
                                 <label for="spa_address">Spa Address:</label>
-                                <input type="text" class="form-control" name="spa_address"/>
+                                <input type="text" class="form-control" name="spa_address" required/>
                             </div>
                             <div class="form-group">
                                 <label for="spa_phone">Spa Phone:</label>
-                                <input type="number" class="form-control" name="spa_phone"/>
+                                <input type="number" class="form-control" name="spa_phone" required/>
                             </div>
                             <div class="form-group">
                                 <label for="spa_phone">Total Employee:</label>
-                                <input type="number" class="form-control" name="spa_total_employee"/>
+                                <input type="number" class="form-control" name="spa_total_employee" value="0"/>
                             </div>
                             <button type="submit" class="btn btn-primary">Add Spa</button>
                         </form>
                     </div>
                 </div>
             </div>
+        </section>
         </div>
     </div>
 @endsection

@@ -25,8 +25,8 @@
                         </div>
                         <div class="form-group">
                             <label>Spa:</label>
+                            <option value="">---Please choose Spa---</option>
                             <select class="form-control" name="spa_id">
-                                <option value="">---Please choose Spa---</option>
                             @foreach ($spa as $spa_id)
                                     <option value="{{ $spa_id->id}}">{{$spa_id->spa_name}}</option>
                                 @endforeach
@@ -39,12 +39,14 @@
                         </div>
                         <div class="form-group">
                             <label>Role:</label>
+                            <option value="">---Please choose Role---</option>
+                            @if(isset($role))
                             <select class="form-control" name="role_id">
-                                <option value="">---Please choose Role---</option>
                                 @foreach ($role as $role)
                                     <option value="{{ $role->id}}">{{$role->name}} </option>
                                 @endforeach
                             </select>
+                                @endif
                         </div>
                         <button type="submit" class="btn btn-primary">Update</button>
                     </form>

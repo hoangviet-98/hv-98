@@ -15,8 +15,6 @@
 @section('content')
 
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        {{--        @include('admin.partial.content-header', ['name' => 'Spa', 'key' => 'List'])--}}
         <section class="content-header">
             <h1>
                 Data Tables
@@ -75,16 +73,15 @@
                                             <td>{{$spa->spa_name}}</td>
                                             <td>{{$spa->spa_address}}</td>
                                             <td>{{$spa->spa_phone}}</td>
-
                                             <td>
                                                 <a style="padding: 5px 10px; border: 1px solid #eee; font-size: 12px"
                                                    href="{{ route('admin.get.edit.spa',$spa->id)}}"> <i
-                                                        class="fas fa-pen"> </i></a>
+                                                            class="fa fa-pencil"> </i></a>
 
                                                 <a href=""
                                                    style="padding: 5px 10px; border: 1px solid #eee; font-size: 12px; color:red"
                                                    data-url="{{ route('admin.get.delete.spa', $spa->id)}}"
-                                                   class="fas fa-trash-alt action_delete"> </a>
+                                                   class="fa fa-trash-o action_delete"> </a>
                                                 @csrf
                                             </td>
                                         </tr>

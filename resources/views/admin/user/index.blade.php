@@ -7,26 +7,22 @@
 @section('js')
     @parent
     <script src="admincontrol/js/sweetAlert2/js/sweetalert2@9.js"></script>
-    <script src="admincontrol/js/logInAdmin/js/list_product.js"></script>
 @endsection
 
 @section('css')
     @parent
-    <link rel="stylesheet" href="admincontrol/js/logInAdmin/js/list_product.js">
 @endsection
-
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
                 Data Tables
-                <small>advanced tables</small>
             </h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="#">Tables</a></li>
-                <li class="active">Data tables</li>
+                <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="/admin/user">User</a></li>
+                <li class="active">List</li>
             </ol>
         </section>
         <div class="back-home">

@@ -16,16 +16,22 @@ class RequestArticle extends FormRequest
     {
         return [
             'a_name' => 'required|unique:hv_article,a_name,'.$this->id,
-            'a_slug' => 'required'
+            'a_slug' => 'required',
+            'a_description' => 'required',
+            'a_content' => 'required',
+            'a_description_seo' => 'required',
+            'a_title_seo' => 'required',
+            'pro_category_id' => 'required',
+
+
         ];
     }
 
     public function messages()
     {
         return [
-            'a_name.required' => 'Trường này không được để trống',
-            'a_name.unique' => 'Trường này đã tồn tại',
-
+            'a_name.required' => 'This field cannot be left blank',
+            'a_name.unique' => 'This field already exists',
 
         ];
     }

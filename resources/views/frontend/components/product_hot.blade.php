@@ -12,10 +12,13 @@
                     <a href="#">Beauty</a>
                     <span>/</span>
                     <span>Post by</span>
-                    <span>BootExperts</span>
+                    <span>Hoang Viet</span>
                 </div>
                 <div class="postexcerpt">
-                    <p style="height: 40px">{{$hot->pro_name}}</p>
+                    <p style="height: 40px;width: 200px;
+  white-space: nowrap;
+  overflow: hidden;text-overflow: ellipsis;">{{$hot->pro_name}}</p>
+                    <p style="color: red;"> <span>Price: </span>{{number_format($hot->pro_price)}} $</p>
                     <hr>
                     <a href="{{route('add.shopping.cart', $hot->id)}}"
                        class="add_to_cart">ADD TO CART</a></div>

@@ -17,6 +17,7 @@ class AdminProductController extends Controller
     public function index(Request $request)
     {
         $hv_product = Product::with('category:id,cat_name');
+        if ($request->id) $hv_product->where('id', $request->id);
         if ($request->name) $hv_product->where('pro_name', 'like', '%' . $request->name . '%');
         if ($request->cat) $hv_product->where('pro_category_id', $request->cat);
         $hv_product = $hv_product->orderByDesc('id')->paginate(5);
@@ -59,9 +60,6 @@ class AdminProductController extends Controller
         $hv_product->pro_slug               = str_slug($requestProduct->pro_name);
         $hv_product->pro_category_id        = $requestProduct->pro_category_id;
         $hv_product->pro_price        = $requestProduct->pro_price;
-//        $hv_product->pro_active             = $requestProduct->pro_active;
-//        $hv_product->pro_hot                = $requestProduct->pro_hot;
-//        $hv_product->pro_view               = $requestProduct->pro_view;
         $hv_product->pro_description        = $requestProduct->pro_description;
         $hv_product->pro_description_seo    = $requestProduct->pro_description_seo;
         $hv_product->pro_content            = $requestProduct->pro_content;
@@ -75,6 +73,7 @@ class AdminProductController extends Controller
                 $hv_product->pro_avatar = $file['name'];
             }
         }
+
         $hv_product->save();
 
     }

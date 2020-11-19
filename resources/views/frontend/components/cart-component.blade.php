@@ -41,8 +41,7 @@
         </tbody>
     </table>
     <div class="col-md-12" style="text-align: right">
-        <h5> Tổng tiền cần thanh toán : {{\Cart::subtotal()}} VNĐ </h5>
-        {{--        <h5> Tổng tiền cần thanh toán : {{\Cart::subtotal()}} VNĐ </h5>--}}
-        <a href="{{route('get.form.pay')}}" class="btn-danger btn">Thanh Toán</a>
+        <h5> Total Amount : {{\Cart::subtotal()}} VNĐ </h5>
+        <a href="{{route('get.form.pay')}}" class="btn-danger btn" style="width: 150px; border-radius: 22px">PAY</a>
     </div>
 </div>

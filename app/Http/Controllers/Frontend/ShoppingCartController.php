@@ -21,7 +21,7 @@ class ShoppingCartController extends FrontendController
     public function addProduct(Request $request, $id)
     {
         $product = Product::find($id);
-        if (!$product) return redirect('/');
+        if (!$product) return redirect('/home');
         Cart::add([
             'id' => $id,
             'name' => $product->pro_name,
@@ -49,22 +49,11 @@ class ShoppingCartController extends FrontendController
     public function deleteProductItem($key)
     {
         Cart::remove($key);
+        Session::flash('toastr', [
+            'type'          => 'success',
+            'message'       => 'Delete items successfully'
+        ]);
         return redirect()->back();
-
-//        try {
-//            Cart::find($key)->delete();
-//            return response()->json([
-//                'code' => 200,
-//                'message' => 'success'
-//            ], 200);
-//
-//        } catch (\Exception $exception) {
-//            Log::errors('message: ' . $exception->getMessage() . ' --- Line : ' . $exception->getLine());
-//            return response()->json([
-//                'code' => 500,
-//                'message' => 'fail'
-//            ],500);
-//        }
     }
 
 
@@ -78,14 +67,14 @@ class ShoppingCartController extends FrontendController
             $product = Product::find($idProduct);
 
             //2:Kiểm tra tồn tại sản phẩm
-            if (!$product) return response(['messages' => 'Không tồn tại sản phẩm cần update']);
+            if (!$product) return response(['messages' => 'There are no products to update']);
 
             //3:Kiểm tra số lượng sản phẩm trong kho
             if ($product->pro_number < $qty) {
-                return response(['messages' => 'Số lượng sản phẩm trong kho không đủ']);
+                return response(['messages' => 'The quantity of products in stock is not enough']);
             }
             Cart::update($id, $qty);
-            return response(['messages' => 'Cập nhật thành công']);
+            return response(['messages' => 'Update cart successfully']);
         }
         return
         Session::flash('toastr', [
@@ -136,37 +125,6 @@ class ShoppingCartController extends FrontendController
             'message'       => 'Your order has been saved'
         ]);
         Cart::destroy();
-        return redirect()->to('/');
-
-//        $totalMoney = str_replace(',', '', Cart::total(0, 3));
-//        $transactionId = Transaction::insertGetId([
-//            'tr_user_id' => get_data_user('web'),
-//            'tr_spa_id' => $request->spaId,
-//            'tr_total' => (int)$totalMoney,
-//            'tr_note' => $request->note,
-//            'tr_address' => $request->address,
-//            'tr_phone' => $request->phone,
-//            'tr_email' => $request->email,
-//            'created_at' => Carbon::now(),
-//            'updated_at' => Carbon::now()
-//
-//        ]);
-//        if ($transactionId) {
-//            $products = Cart::content();
-//            Mail::to($request->email)->send(new TransactionSuccess($products));
-//            foreach ($products as $product) {
-//                Order::insert([
-//                    'or_transaction_id' => $transactionId,
-//                    'or_product_id' => $product->id,
-//                    'or_quantity' => $product->qty,
-//                    'or_price' => $product->price,
-//                ]);
-//                DB::table('hv_product')
-//                    ->where('id', $product->id)
-//                    ->increment("pro_pay");
-//            }
-//        }
-//        Cart::destroy();
-//        return redirect()->back();
+        return redirect()->to('/home');
     }
 }

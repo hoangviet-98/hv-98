@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -16,8 +17,9 @@ class ProductController extends FrontendController
     public function index(Request $request)
     {
         $products = Product::all();
+        $categories = Category::all();
 //        if($name = $request->k) $products->where('pro_name', 'like', '%'.$name.'%');
-        return view('frontend.pages.product.index', compact('products'));
+        return view('frontend.pages.product.index', compact('products', 'categories'));
     }
 
     public function getProductHot()

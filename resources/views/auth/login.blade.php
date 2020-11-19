@@ -72,7 +72,7 @@
                                     {{--                                @endif--}}
                                 </div>
                             </div>
-                            <a href="{{route('get.email_reset_password')}}">Quen mat khau</a>
+                            <a href="{{route('get.email_reset_password')}}">Forgot password</a>
                         </form>
                     </div>
                 </div>

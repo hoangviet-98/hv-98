@@ -12,11 +12,13 @@
                     <a href="#">Beauty</a>
                     <span>/</span>
                     <span>Post by</span>
-                    <span>BootExperts</span>
+                    <span>Hoang Viet</span>
                 </div>
                 <div class="postexcerpt">
-                    <p style="height: 40px">{{$new->pro_name}}</p>
-                    <p style="color: red;">{{number_format($new->pro_price)}} vnd</p>
+                    <p style="height: 40px;width: 200px;
+                    white-space: nowrap;
+                    overflow: hidden;text-overflow: ellipsis;">{{$new->pro_name}}</p>
+                    <p style="color: red;"> <span>Price: </span>{{number_format($new->pro_price)}} $</p>
                     <hr>
                     <a href="{{route('add.shopping.cart', $new->id)}}"
                        class="add_to_cart">ADD TO CART</a></div>

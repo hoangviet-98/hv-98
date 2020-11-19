@@ -16,15 +16,12 @@ class RequestSpa extends FormRequest
         return false;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
     public function rules()
     {
         return [
-            //
+            'spa_name' => 'required|unique:hv_spa,spa_name,' . $this->id,
+            'spa_address' => 'required',
+            'spa_phone' => 'required|max:10',
         ];
     }
 }

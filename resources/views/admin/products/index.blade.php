@@ -61,6 +61,8 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
+                                        <input type="text" class="form-control" value="{{\Request::get('id')}}" name="id"
+                                               placeholder="ID">
                                         <input type="text" class="form-control" placeholder="Search Name Product ..."
                                                name="name"
                                                value="{{ \Request::get('name') }}">

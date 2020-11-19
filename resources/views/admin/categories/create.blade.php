@@ -21,7 +21,7 @@
             <p><a style="margin: 19px"
                   href="{{ route('admin.get.list.category') }}">
                     <i class="fa fa-arrow-circle-left"> </i>
-                    Về danh sách</a></p>
+                    Back</a></p>
         </div>
         <section class="content">
             <div class="row">

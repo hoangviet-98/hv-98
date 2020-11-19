@@ -71,11 +71,6 @@
                                         <td>{{$role->name}}</td>
                                         <td>{{$role->display_name}}</td>
                                         <td>
-                                            <a style="padding: 5px 10px; border: 1px solid #eee; font-size: 12px"
-                                               href="{{ route('admin.get.edit.role',$role->id)}}"><i
-                                                    class="fa fa-pencil" aria-hidden="true"></i>
-                                            </a>
-
                                             <a href=""
                                                style="padding: 5px 10px; border: 1px solid #eee; font-size: 12px; color:red"
                                                data-url="{{ route('admin.get.delete.role', $role->id)}}"

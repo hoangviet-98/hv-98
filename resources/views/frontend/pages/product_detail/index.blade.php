@@ -22,11 +22,11 @@
            let listStart = $(".list-start .fa");
 
             listRatingText = {
-                1: 'Khong thich',
-                2: 'Tam dc',
-                3: 'Binh thuong',
-                4: 'Rat tot',
-                5: 'Qua tuyet voi',
+                1: 'dislike',
+                2: 'Oke',
+                3: 'Nomal',
+                4: 'Very good',
+                5: 'Great',
             };
 
            listStart.mouseover(function (){
@@ -174,7 +174,7 @@
                                 <a href="index.html">Home</a>
                                 <span><i class="fa fa-angle-right"></i></span>
                             </li>
-                            <li class="category3"><span>Shop List</span></li>
+                            <li class="category3"><span>Product Detail</span></li>
                         </ul>
                     </div>
                 </div>
@@ -209,23 +209,7 @@
                                                 src="{{ asset(pare_url_file($productDetail->pro_avatar)) }}" alt=""/>
                                         </div>
                                     </div>
-                                    <p>
-                                        <svg
-                                            fill="currentColor"
-                                            preserveAspectRatio="xMidYMid meet"
-                                            height="1em"
-                                            width="1em"
-                                            viewBox="0 0 40 40"
-                                            style="vertical-align: middle"
-                                        >
-                                            <g>
-                                                <path
-                                                    d="m24.4 17.9v1.4q0 0.3-0.3 0.5t-0.5 0.2h-5v5q0 0.3-0.2 0.5t-0.5 0.2h-1.4q-0.3 0-0.5-0.2t-0.2-0.5v-5h-5q-0.3 0-0.5-0.2t-0.2-0.5v-1.4q0-0.3 0.2-0.5t0.5-0.3h5v-5q0-0.2 0.2-0.5t0.5-0.2h1.4q0.3 0 0.5 0.2t0.2 0.5v5h5q0.3 0 0.5 0.3t0.3 0.5z m2.8 0.7q0-4.2-2.9-7.1t-7.1-2.9-7 2.9-3 7.1 2.9 7 7.1 3 7.1-3 2.9-7z m11.4 18.5q0 1.2-0.8 2.1t-2 0.8q-1.2 0-2-0.8l-7.7-7.7q-4 2.8-8.9 2.8-3.2 0-6.1-1.3t-5-3.3-3.4-5-1.2-6.1 1.2-6.1 3.4-5.1 5-3.3 6.1-1.2 6.1 1.2 5 3.3 3.4 5.1 1.2 6.1q0 4.9-2.7 8.9l7.6 7.6q0.8 0.9 0.8 2z"
-                                                ></path>
-                                            </g>
-                                        </svg>
-                                        Rê chuột lên hình để phóng to
-                                    </p>
+                                    <p>Image Product</p>
                                 </div>
                             </div>
 
@@ -307,6 +291,7 @@
                                         itemscope=""
                                         itemtype="http://schema.org/Offer"
                                     >
+                                    >
                                         <link
                                             itemprop="availability"
                                             href="http://schema.org/InStock"
@@ -321,33 +306,14 @@
                                         <div class="group">
                                             <div class="price-and-icon">
                                                 <p class="price">
-                                                   {{number_format($productDetail->pro_price)}}<!-- -->
-                                                    VNĐ
+                                                   {{($productDetail->pro_price)}} $
                                                 </p>
                                             </div>
-                                            <p class="original-price first-child">
-                                                Tiết kiệm:
-                                                <span> 44<!-- -->% </span>
-                                                (<!-- -->110.000<!-- -->
-                                                ₫)
-                                            </p>
-                                            <p class="original-price">
-                                                Giá thị trường:
-                                                <!-- -->250.000<!-- -->
-                                                ₫
-                                            </p>
                                             <div
                                                 class="DealCountDown__Wrapper-sc-5xee5y-0 dbKVuT"
                                             >
-                                                <p class="timer">
-                                                    Khuyến mãi kết thúc sau<span>
-                                                0 </span
-                                                    >ngày<span> 01 </span
-                                                    ><span> : </span><span> 28 </span
-                                                    ><span> : </span><span> 20 </span>
-                                                </p>
                                                 <div class="ordered">
-                                                    <p class="text">Đã bán 5</p>
+                                                    <p class="text">Sold :{{$productDetail->pro_pay}}</p>
                                                     <div class="process-bar">
                                                         <div
                                                             class="process"
@@ -510,7 +476,7 @@
             <div class="rating_item">
                 <div>
                     <span style="color: #333; font-weight: bold;text-transform: capitalize;">{{$rating->users->name}}</span>
-                    <a href="" style="color: #2ba832;"><i class="fa fa-check-circle-o" style="margin-right: 0"></i>Da mua hang tai HanaSpa</a>
+                    <a href="" style="color: #2ba832;"><i class="fa fa-check-circle-o" style="margin-right: 0"></i>Bought at Hana Spa</a>
                 </div>
                 <p>
                     <span class="pro-rating">

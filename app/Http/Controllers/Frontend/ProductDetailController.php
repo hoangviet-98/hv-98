@@ -49,7 +49,7 @@ class ProductDetailController extends FrontendController
 
             return view('frontend.pages.product_detail.index' ,$viewData);
         }
-        return redirect()->to('/');
+        return redirect()->to('/home');
     }
 
     public function mapRatingDefault()

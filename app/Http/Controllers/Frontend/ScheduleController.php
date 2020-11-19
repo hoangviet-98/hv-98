@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Schedule;
 use App\Models\Spa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ScheduleController extends FrontendController
 {
@@ -40,7 +41,11 @@ class ScheduleController extends FrontendController
         $schedule->s_note = $request->s_note;
 
         $schedule->save();
-        return redirect()->back();
+        Session::flash('toastr', [
+            'type'          => 'success',
+            'message'       => 'Your schedule has been saved'
+        ]);
+        return redirect()->to('/home');
     }
 
 }

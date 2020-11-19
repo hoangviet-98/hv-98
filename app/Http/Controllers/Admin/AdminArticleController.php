@@ -34,25 +34,25 @@ class AdminArticleController extends Controller
     {
         return Menu::all();
     }
-    public function store(Request $request)
+    public function store(RequestArticle $requestArticle)
     {
-        $this->insertOrUpdate($request);
+        $this->insertOrUpdate($requestArticle);
         return redirect()->route('admin.get.list.article');
     }
 
-    public function insertOrUpdate($request, $id='')
+    public function insertOrUpdate($requestArticle, $id='')
     {
         $hv_article                     = new Article();
         if($id) $hv_article             = Article::find($id);
-        $hv_article->a_name             = $request->a_name;
-        $hv_article->a_slug             = str_slug($request->a_name);
-        $hv_article->a_description      = $request->a_description;
-        $hv_article->a_content          = $request->a_content;
-        $hv_article->a_description_seo  = $request->a_description_seo;
-        $hv_article->a_title_seo        = $request->a_title_seo;
-        $hv_article->a_menu_id          = $request->a_menu_id;
+        $hv_article->a_name             = $requestArticle->a_name;
+        $hv_article->a_slug             = str_slug($requestArticle->a_name);
+        $hv_article->a_description      = $requestArticle->a_description;
+        $hv_article->a_content          = $requestArticle->a_content;
+        $hv_article->a_description_seo  = $requestArticle->a_description_seo;
+        $hv_article->a_title_seo        = $requestArticle->a_title_seo;
+        $hv_article->a_menu_id          = $requestArticle->a_menu_id;
 
-        if ($request->hasFile('a_avatar'))
+        if ($requestArticle->hasFile('a_avatar'))
         {
             $file = upload_image('a_avatar');
             if(isset($file['name']))
@@ -70,9 +70,9 @@ class AdminArticleController extends Controller
         return view('admin.article.edit', compact('hv_article', 'hv_menu'));
     }
 
-    public function update(Request $request, $id)
+    public function update(RequestArticle $requestArticle, $id)
     {
-        $this->insertOrUpdate($request, $id);
+        $this->insertOrUpdate($requestArticle, $id);
         return redirect()->route('admin.get.list.article');
     }
 

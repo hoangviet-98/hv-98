@@ -21,9 +21,9 @@ class AdminTransactionController extends Controller
         $transactions = Transaction::whereRaw(1);
         if ($request->id) $transactions->where('id', $request->id);
         if($request->email) $transactions->where('tr_email', 'like', '%'. $request->email. '%');
+        if ($request->status) $transactions->where('tr_status', $request->status);
 
-
-        $transactions = Transaction::orderByDesc('id')->paginate(10);
+        $transactions = $transactions->orderByDesc('id')->paginate(10);
 
         if($request->export) {
             //Call export excel

@@ -9,16 +9,16 @@
                         class="nd_options_navigation_4 nd_options_navigation_type nd_options_text_align_right nd_options_display_none_all_responsive">
                         <div class="nd_options_display_block">
                             <div class="menu-spa-menu-container">
-                                <div class="list_pc" style=" margin-left: 410px; text-align: center">
+                                <div class="list_pc" style="text-align: center">
                                     <ul id="menu-spa-menu-1">
                                         <li class="menu-item">
-                                            <a href="/" aria-current="page">
+                                            <a href="/home" aria-current="page">
                                                 <i class="fa fa-home" aria-hidden="true"
                                                    style="color: #DA263B;font-size: 22px;vertical-align: sub;"></i>
                                             </a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="">Danh mục sản phẩm</a>
+                                            <a href="/home">Category</a>
                                             <ul class="sub-menu">
                                                 <li><a href="{{route('get.all.product')}}">All Product</a></li>
                                                 @if (isset($categories))
@@ -34,19 +34,19 @@
                                         {{-- <a href="{{route('get.list.product')}}">Product</a>--}}
                                         {{-- </li>--}}
                                         <li class="menu-item ">
-                                            <a href="#">Giới thiệu</a>
+                                            <a href="#">Introduce</a>
                                         </li>
                                         <li class="menu-item ">
-                                            <a href="{{route('get.schedule')}}">Đặt Lịch</a>
+                                            <a href="{{route('get.schedule')}}">Schedule</a>
                                         </li>
 {{--                                        <li class="menu-item ">--}}
 {{--                                            <a href="#">Khuyến mãi</a>--}}
 {{--                                        </li>--}}
                                         <li class="menu-item ">
-                                            <a href="{{route('get.list.article')}}">Bài viêt</a>
+                                            <a href="{{route('get.list.article')}}">Article</a>
                                         </li>
                                         <li class="menu-item ">
-                                            <a href="#"><i class="fa fa-align-justify"></i></a>
+                                            <a href="/home"><i class="fa fa-align-justify"></i></a>
                                             <ul class="sub-menu">
                                                 @if (Auth::check())
 
@@ -54,17 +54,17 @@
                                                         <a href="{{route('get.user.dashboard')}}">Manage Account</a>
                                                     </li>
                                                     <li class="menu-item">
-                                                        <a href="#">Cart</a>
+                                                        <a href="{{route('get.list.shopping.cart')}}">Cart</a>
                                                     </li>
                                                     <li class="menu-item">
-                                                        <a href="{{route('get.logout.user')}}">Thoat</a>
+                                                        <a href="{{route('get.logout.user')}}">Log out</a>
                                                     </li>
                                                 @else
                                                     <li class="menu-item">
-                                                        <a href="{{route('get.register')}}">Dang ky</a>
+                                                        <a href="{{route('get.register')}}">Registration</a>
                                                     </li>
                                                     <li class="menu-item">
-                                                        <a href="{{route('get.login')}}">Dang nhap</a>
+                                                        <a href="{{route('get.login')}}">Log in</a>
                                                     </li>
                                                 @endif
                                             </ul>
@@ -76,16 +76,17 @@
                                             </a>
                                             <a href="{{route('get.list.shopping.cart')}}"><span>{{\Cart::count()}}</span></a>
                                         </li>
+{{--                                        <li class="menu-item">--}}
+{{--                                                <form action="" role="search" method="GET" style="width: 200px; margin-left: 20px ;display: flex">--}}
+{{--                                                    --}}{{--                                            <form action="{{route('get.list.product')}}" role="search" method="GET" style="width: 200px; margin-left: 20px ;display: flex">--}}
+{{--                                                    <input type="text" name="k" value="{{Request::get('k')}}" style="height: 30px;" class="form-control" placeholder="Search Product ...">--}}
+{{--                                                    <button type="submit" class="btnSearch">--}}
+{{--                                                        <i class="fa fa-search"></i>--}}
+{{--                                                    </button>--}}
+{{--                                                </form>--}}
+{{--                                            </li>--}}
                                     </ul>
-                                    <div class="search-icon" >
-                                        <form action="" role="search" method="GET" style="width: 200px; margin-left: 20px ;display: flex">
-{{--                                            <form action="{{route('get.list.product')}}" role="search" method="GET" style="width: 200px; margin-left: 20px ;display: flex">--}}
-                                            <input type="text" name="k" value="{{Request::get('k')}}" style="height: 30px;" class="form-control" placeholder="Search Product ...">
-                                            <button type="submit" class="btnSearch">
-                                                <i class="fa fa-search"></i>
-                                            </button>
-                                        </form>
-                                    </div>
+
                                 </div>
                                 <!--End PC-->
 
@@ -117,7 +118,7 @@
                                             </lable>
                                         <ul class="nav__mobile_list">
                                             <li>
-                                                <a href="/" class="nav__mobile_link" aria-current="page">
+                                                <a href="/home" class="nav__mobile_link" aria-current="page">
                                                     <i class="fa fa-home" aria-hidden="true"
                                                        style="color: #DA263B;font-size: 22px;vertical-align: sub;"></i>
                                                 </a>

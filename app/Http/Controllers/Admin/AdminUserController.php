@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Spa;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -30,13 +31,12 @@ class AdminUserController extends Controller
 
     public function create()
     {
-        return view('admin.user.create');
+        $spa = Spa::all();
+        return view('admin.user.create', compact('spa'));
     }
 
     public function store(Request $request)
     {
-//        try {
-//            DB::beginTransaction();
         $user = $this->user->create([
             'name' => $request->name,
             'spa_id' => $request->spa_id,
@@ -44,39 +44,28 @@ class AdminUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
         $user->roles()->attach($request->role_id);
-//            DB::commit();
         return redirect()->route('admin.get.list.user');
-//        } catch(\Exception $exception){
-//            DB::rollBack();
-//            Log::errors('Message :' . $exception->getMessage() . '--- Line: ' .$exception->getLine());
 
 
     }
 
     public function edit($id)
     {
+        $spa = Spa::all();
         $user = $this->user->find($id);
-        return view('admin.user.edit', ['user' => $user]);
+        return view('admin.user.edit', compact('user', 'spa'));
     }
 
     public function update(Request $request, $id)
     {
-        try {
-            DB::beginTransaction();
             $this->user->find($id)->update([
                 'name' => $request->name,
                 'spa_id' => $request->spa_id,
                 'email' => $request->email,
-//                'password' => Hash::make($request->password)
             ]);
             $user = $this->user->find($id);
             $user->roles()->sync($request->role_id);
-            DB::commit();
             return redirect()->back();
-        } catch (\Exception $exception) {
-            DB::rollBack();
-            Log::error('Message :' . $exception->getMessage() . '--- Line: ' . $exception->getLine());
-        }
     }
 
     public function delete($id)

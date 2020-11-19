@@ -76,8 +76,8 @@
                                 >
                                 @if($errors->has('a_name'))
                                     <span class="error-text">
-                  {{$errors->first('a_name')}}
-                </span>
+                                {{$errors->first('a_name')}}
+                                    </span>
                                 @endif
                             </div>
                             <div class="form-group">
@@ -87,6 +87,11 @@
                                        value="{{old('a_description')}}"
                                        placeholder="Please input cont description"
                                 >
+                                @if($errors->has('a_description'))
+                                    <span class="error-text">
+                                {{$errors->first('a_description')}}
+                                    </span>
+                                @endif
                             </div>
 
                             <div class="form-group">
@@ -97,6 +102,11 @@
 {{--                                       value="{{old('a_content')}}"--}}
 {{--                                       placeholder="Please input content"--}}
 {{--                                >--}}
+                                @if($errors->has('a_content'))
+                                    <span class="error-text">
+                                {{$errors->first('a_content')}}
+                                    </span>
+                                @endif
                             </div>
 
                             <div class="form-group">
@@ -106,6 +116,11 @@
                                        value="{{old('a_description_seo')}}"
                                        placeholder="Please input a_description_seo"
                                 >
+                                @if($errors->has('a_description_seo'))
+                                    <span class="error-text">
+                                {{$errors->first('a_description_seo')}}
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Title Seo:</label>
@@ -114,6 +129,11 @@
                                        value="{{old('a_title_seo')}}"
                                        placeholder="Please input a_title_seo"
                                 >
+                                @if($errors->has('a_title_seo'))
+                                    <span class="error-text">
+                                {{$errors->first('a_title_seo')}}
+                                    </span>
+                                @endif
                                 <div class="form-group">
                                     <img
                                         src="https://www.globe2.net/wp-content/plugins/accelerated-mobile-pages/images/SD-default-image.png"
@@ -128,6 +148,11 @@
                                         <option value="{{ $menu_id->id}}">{{$menu_id->mu_name}} </option>
                                     @endforeach
                                 </select>
+                                @if($errors->has('pro_category_id'))
+                                    <span class="error-text">
+                                {{$errors->first('pro_category_id')}}
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Image:</label>

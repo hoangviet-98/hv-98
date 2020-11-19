@@ -6,26 +6,20 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class RequestProduct extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
+
     public function authorize()
     {
         return true;
     }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
     public function rules()
     {
         return [
             'pro_name' => 'required|unique:hv_product,pro_name,' . $this->id,
             'pro_category_id' => 'required',
+            'pro_number' => 'required',
+            'pro_description' => 'required',
+            'pro_content' => 'required',
+            'pro_description_seo' => 'required',
             'pro_price' => 'required|max:9'
         ];
     }
@@ -33,10 +27,11 @@ class RequestProduct extends FormRequest
     public function messages()
     {
         return [
-            'pro_name.required' => 'Trường này không được để trống',
-            'pro_name.unique' => 'Trường này đã tồn tại',
-            'pro_category_id.required' => 'Trường này không được để trống',
-            'pro_price.required' => 'Trường này không được để trống',
+            'pro_name.required' => 'This field cannot be left blank',
+            'pro_name.unique' => 'This field already exists',
+            'pro_category_id.required' => 'This field cannot be left blank',
+            'pro_content.required' => 'This field cannot be left blank',
+            'pro_price.required' => 'This field cannot be left blank',
             'pro_price.max' => 'Price is too long'
 
         ];

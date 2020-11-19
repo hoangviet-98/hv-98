@@ -25,15 +25,6 @@ class RegisterController extends Controller
 
     public function postRegister(RequestRegister $request)
     {
-//        $data             = $request->except("_token");
-//        $data['password'] = Hash::make($data['password']);
-//        $id               = User::insertGetId($data);
-//
-//        if ($id) {
-//            return redirect()->route('get.login');
-//        }
-//
-//        return redirect()->back();
         $data               = $request->except("_token");
         $data['password']   = Hash::make($data['password']);
         $id = User::insertGetId($data);
@@ -50,28 +41,4 @@ class RegisterController extends Controller
         }
         return redirect()->route('get.register');
     }
-
-//    protected function validator(array $data)
-//    {
-//        return Validator::make($data, [
-//            'name' => ['required', 'string', 'max:255'],
-//            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-//            'password' => ['required', 'string', 'min:8', 'confirmed'],
-//        ]);
-//    }
-//
-//    /**
-//     * Create a new user instance after a valid registration.
-//     *
-//     * @param  array  $data
-//     * @return \App\User
-//     */
-//    protected function create(array $data)
-//    {
-//        return User::create([
-//            'name' => $data['name'],
-//            'email' => $data['email'],
-//            'password' => Hash::make($data['password']),
-//        ]);
-//    }
 }
