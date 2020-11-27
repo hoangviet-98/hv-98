@@ -25,7 +25,7 @@
         @endif
     @show
 
-    <title>Trang chủ | Hana Spa</title>
+    <title>Vania Spa</title>
 </head>
 <body>
 

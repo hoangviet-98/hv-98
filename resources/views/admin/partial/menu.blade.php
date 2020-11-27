@@ -76,17 +76,17 @@
                         <i class="fa fa-windows" aria-hidden="true"></i> <span>Spa</span>
                     </a>
                 </li>
-                <li class="{{ \Request::route()->getName() == 'admin.get.list.service' ? 'active' : '' }}">
+             <!--    <li class="{{ \Request::route()->getName() == 'admin.get.list.service' ? 'active' : '' }}">
                     <a href="{{ route('admin.get.list.service') }}">
-                        <i class="fa fa-windows" aria-hidden="true"></i> <span>Service</span>
+                        <i class="fa fa-windows" aria-hidden="true"></i> <span></span>
                     </a>
-                </li>
-
+                </li> -->
+<!-- 
                     <li class="{{ \Request::route()->getName() == 'admin.get.list.employee' ? 'active' : '' }}">
                         <a href="{{ route('admin.get.list.employee') }}">
-                            <i class="fa fa-windows" aria-hidden="true"></i> <span>Employee</span>
+                            <i class="fa fa-windows" aria-hidden="true"></i> <span></span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="{{ \Request::route()->getName() == 'admin.get.list.transactions' ? 'active' : '' }}">
                         <a href="{{ route('admin.get.list.transactions') }}">
                             <i class="fa fa-windows" aria-hidden="true"></i> <span>Transaction</span>
@@ -98,18 +98,18 @@
                         </a>
                     </li>
 
-                <li class="{{ \Request::route()->getName() == 'admin.get.list.booking' ? 'active' : '' }}">
+<!--                 <li class="{{ \Request::route()->getName() == 'admin.get.list.booking' ? 'active' : '' }}">
                     <a href="{{ route('admin.get.list.booking') }}">
-                        <i class="fa fa-windows" aria-hidden="true"></i> <span>Booking</span>
+                        <i class="fa fa-windows" aria-hidden="true"></i> <span></span>
                     </a>
                 </li>
 
                 <li class="{{ \Request::route()->getName() == 'admin.get.list.menu' ? 'active' : '' }}">
                     <a href="{{ route('admin.get.list.menu') }}">
-                        <i class="fa fa-windows" aria-hidden="true"></i> <span>Menu</span>
+                        <i class="fa fa-windows" aria-hidden="true"></i> <span></span>
                     </a>
                 </li>
-
+ -->
                     <li class="{{ \Request::route()->getName() == 'admin.get.list.rating' ? 'active' : '' }}">
                         <a href="{{ route('admin.get.list.rating') }}">
                             <i class="fa fa-windows" aria-hidden="true"></i> <span>Rating</span>

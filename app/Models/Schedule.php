@@ -27,15 +27,15 @@ class Schedule extends Model
 
     protected $status = [
         0 => [
-            'name' => 'Xu ly',
+            'name' => 'Receive',
             'class' => 'label-default'
         ],
         1 => [
-            'name' => 'Da tiep nhan',
+            'name' => 'Processing',
             'class' => 'label-primary'
         ],
         2 => [
-            'name' => 'da huy',
+            'name' => 'Cancelled',
             'class' => 'label-danger'
         ]
     ];

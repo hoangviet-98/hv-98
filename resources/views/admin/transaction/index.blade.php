@@ -7,16 +7,11 @@
     @parent
 
     <script src="admincontrol/js/sweetAlert2/js/sweetalert2@9.js"></script>
-{{--        <script src="admincontrol/js/logInAdmin/js/list_product.js"></script>--}}
-    {{--    <script src="admincontrol/js/table/dataTables.bootstrap.min.js"></script>--}}
-    {{--    <script src="admincontrol/js/table/jquery.dataTables.min.js"></script>--}}
-    {{--    <script src="admincontrol/js/table/table.js"></script>--}}
 
 @endsection
 
 @section('css')
     @parent
-    {{--    <link rel="stylesheet" href="admincontrol/css/bootstrap-table/dataTables.bootstrap.min.css">--}}
 
 @endsection
 
@@ -26,13 +21,11 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                Data Tables
-                <small>advanced tables</small>
+                Transactions Manage
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="#">Tables</a></li>
-                <li class="active">Data tables</li>
+                <li><a href="#">Transactions List</a></li>
             </ol>
         </section>
         <!-- Main content -->
@@ -40,9 +33,6 @@
             <div class="row">
                 <div class="col-sm-12"><br>
                     <div class="box">
-                        <div class="box-header">
-                            <h3 class="box-title">Hover Data Table</h3>
-                        </div>
                         <div class="box-header">
                             <h3 class="box-title"></h3>
                             <form class="form-inline" action="">
@@ -86,7 +76,7 @@
                                                 <li>Phone:{{$transaction->tr_phone}}</li>
                                             </ul>
                                         </td>
-                                        <td>{{number_format($transaction->tr_total)}} VND</td>
+                                        <td>{{number_format($transaction->tr_total)}} $</td>
                                         <td>{{$transaction->created_at}}</td>
 
                                         <td>{{isset($transaction->spa->spa_name) ? $transaction->spa->spa_name : '[N\A]'}}</td>
@@ -118,17 +108,17 @@
                                                            class="fa fa-trash-o action_delete">Delete </a></li>
                                                     <li>
                                                         <a href="{{route('admin.get.action.transactions', ['process', $transaction->id])}}">
-                                                            <i class="fa fa-ban"></i> Dang giao hang
+                                                            <i class="fa fa-ban"></i> Delivering
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="{{route('admin.get.action.transactions', ['success', $transaction->id])}}">
-                                                            <i class="fa fa-ban"></i> Da giao hang
+                                                            <i class="fa fa-ban"></i> Delivered
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="{{route('admin.get.action.transactions', ['cancel', $transaction->id])}}">
-                                                            <i class="fa fa-ban"></i> Da huy
+                                                            <i class="fa fa-ban"></i> Cancelled
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -155,7 +145,76 @@
                                                     <li>Phone:{{$item->tr_phone}}</li>
                                                 </ul>
                                             </td>
-                                            <td>{{number_format($item->tr_total)}} VND</td>
+                                            <td>{{number_format($item->tr_total)}} $</td>
+                                            <td>{{$item->created_at}}</td>
+
+                                            <td>{{isset($item->spa->spa_name) ? $item->spa->spa_name : '[N\A]'}}</td>
+                                            <td>
+                                                <a href="{{ route('admin.get.action.transactions', ['active', $item->id]) }}"
+                                                   class="label {{$item->getStatus($item->tr_status ) ['class'] }} ">
+
+                                                    {{$item->getStatus($item->tr_status) ['name'] }}
+
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a data-id="{{$item->id}}"
+                                                   href="{{route('ajax.admin.transactions.detail', $item->id)}}" class="js-preview-transaction"
+                                                   style="padding: 5px 10px; border: 1px solid #eee; font-size: 12px;"
+                                                ><i class="fa fa-eye"></i></a>
+
+                                                <div class="btn-group" style="">
+                                                    <button type="button" class="btn btn-success btn-xs">Action</button>
+                                                    <button type="button" class="btn btn-success btn-xs dropdown-toggle"
+                                                            data-toggle="dropdown" aria-expanded="false">
+                                                        <span class="caret"></span>
+                                                        <span class="sr-only">Toogle Dropdown</span>
+                                                    </button>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li><a href=""
+                                                               style="padding: 5px 10px; border: 1px solid #eee; font-size: 12px; color:red"
+                                                               data-url="{{ route('admin.get.delete.transactions', $item->id)}}"
+                                                               class="fa fa-trash-o action_delete">Delete </a></li>
+                                                        <li>
+                                                            <a href="{{route('admin.get.action.transactions', ['process', $item->id])}}">
+                                                                <i class="fa fa-ban"></i> Delivering
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{{route('admin.get.action.transactions', ['success', $item->id])}}">
+                                                                <i class="fa fa-ban"></i> Delivered
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{{route('admin.get.action.transactions', ['cancel', $item->id])}}">
+                                                                <i class="fa fa-ban"></i> Cancelled
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                @csrf
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                    </tbody>
+                                @endif
+<!-- Role = 1 - NK -->
+                                @if (Auth::guard('admins')->user()->role_id===1)
+                                    <tbody>
+                                    @foreach($transactionsAdmin as $item)
+                                        <tr>
+                                            <th>{{$item->id}}</th>
+                                            <td>
+                                                <ul style="text-align: left">
+                                                    <li>
+                                                        Name: {{isset($item->users->name) ? $item->users->name : '[N\A]'}}</li>
+                                                    <li>
+                                                        Email: {{isset($item->tr_email) ? $item->tr_email : '[N\A]'}}</li>
+                                                    <li>Address: {{$item->tr_address}}</li>
+                                                    <li>Phone:{{$item->tr_phone}}</li>
+                                                </ul>
+                                            </td>
+                                            <td>{{number_format($item->tr_total)}} $</td>
                                             <td>{{$item->created_at}}</td>
 
                                             <td>{{isset($item->spa->spa_name) ? $item->spa->spa_name : '[N\A]'}}</td>

@@ -35,7 +35,7 @@
             <p><a style="margin: 19px"
                   href="{{ route('admin.get.list.product') }}">
                     <i class="fa fa-arrow-circle-left"> </i>
-                    Về danh sách
+                    Back
                 </a></p>
         </div>
         <form method="post" action="" enctype="multipart/form-data">

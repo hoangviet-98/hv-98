@@ -1,35 +1,11 @@
 @extends('layouts.master_frontend')
 @section('title')
-    <title>Trang chủ | Hana Spa</title>
 @endsection
 @section('js')
     @parent
-    {{--<script src="admins/js/product/jquery.elevateZoom-3.0.8.min.js"></script>--}}
-    {{-- <script src="admins/js/product/modernizr-2.8.3.min.js"></script>--}}
     <script src="https://code.jquery.com/jquery-3.5.1.js"
             integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    {{--    <script>--}}
-    {{--        function addToCart(event) {--}}
-    {{--            event.preventDefault();--}}
-    {{--            let urlCart = $(this).data('url');--}}
-    {{--            $.ajax({--}}
-    {{--                type: "GET",--}}
-    {{--                url: urlCart,--}}
-    {{--                dataType: 'json',--}}
-    {{--                success: function (data) {--}}
-    {{--                    if (data.code === 200) {--}}
-    {{--                        alert('Add Product Success');--}}
-    {{--                    }--}}
-    {{--                },--}}
-    {{--                errors: function () {--}}
-    {{--                }--}}
-    {{--            });--}}
-    {{--        }--}}
 
-    {{--        $(function () {--}}
-    {{--            $('.add_to_cart').on('click', addToCart);--}}
-    {{--        })--}}
-    {{--    </script>--}}
 
     
 @endsection
@@ -89,8 +65,6 @@
             @if (isset($productsNew))
                 <div class="container" style="border-top: 1px solid #e4e4e4">
                     <h2>New Products</h2>
-                    {{--                    <div class="area-title">--}}
-{{--                    </div>--}}
                     <div class="row">
                         <div class="all-singlepost">
                             <!-- single latestpost start -->
@@ -103,9 +77,7 @@
         <div class="product" style="text-align: center; font-family: Open Sans, sans-serif;margin-top: 50px">
             @if (isset($productHot))
                 <div class="container" style="border-top: 1px solid #e4e4e4" >
-{{--                    <div class="area-title">--}}
                         <h2>Hot Products</h2>
-{{--                    </div>--}}
                     <div class="row">
                         <div class="all-singlepost">
                             <!-- single latestpost start -->
@@ -144,9 +116,7 @@
     <div class="1" style="text-align: center; font-family: Open Sans, sans-serif; ;margin-top: 50px">
         @if (isset($articleNews))
             <div class="container" style="border-top: 1px solid #e4e4e4">
-{{--                <div class="area-title">--}}
                     <h2>News Post</h2>
-{{--                </div>--}}
                 <div class="row">
                     <div class="all-singlepost">
                         <!-- single latestpost start -->

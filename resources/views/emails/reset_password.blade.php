@@ -8,8 +8,8 @@
         <div style="width: 50%"></div>
     </div>
     <div style="background: #f4f5f5; box-sizing: border-box; padding: 15px; border-top: 1px solid #dedede; border-bottom: 1px solid #dedede">
-        <p>Ban co 1 yeu cau thay doi mat khau <a href="{{$link}}">Click me</a> de thay doi mat khau </p>
-        <p><i>Chu y:</i>: Duong dan se bi xoa sau 3 phut</p>
+        <p>You have a password change request <a href="{{$link}}">Click me</a> to change the password </p>
+        <p><i>Attention :</i>: The link will be deleted after 3 minutes</p>
     </div>
     <div style="background: #f4f4f5; box-sizing: border-box; padding: 15px">
         <p style="margin: 2px 0; color: #333">Email : vietht098@gmail.com</p>

@@ -31,7 +31,7 @@
             },
 
             title: {
-                text: 'Thong ke trang thai don hang'
+                text: 'Order status statistics'
             },
 
             xAxis: {
@@ -86,7 +86,7 @@
                 }
             },
             series: [{
-                name: 'Complete the transactions.blade.php',
+                name: 'Complete the transactions',
                 marker: {
                     symbol: 'square'
                 },
@@ -94,7 +94,7 @@
 
             },
                 {
-                    name: 'Receive the transactions.blade.php',
+                    name: 'Receive the transactions',
                     marker: {
                         symbol: 'square'
                     },
@@ -116,8 +116,8 @@
         <section class="content-header">
             <h1>
                 Dashboard
-                <small style="font-size: 50px">role : {{Auth::guard('admins')->user()->role_id}}
-                 </small>
+{{--                <small style="font-size: 50px">role : {{Auth::guard('admins')->user()->role_id}}--}}
+{{--                 </small>--}}
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -127,7 +127,7 @@
         <section class="content">
             <!-- Info boxes -->
                     @if (Auth::guard('admins')->user()->role_id===1)
-            <div class="row">
+                <div class="row">
                 <div class="clearfix visible-sm-block"></div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box">
@@ -157,7 +157,7 @@
                         <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
                         <div class="info-box-content">
                             <span class="info-box-text">Evaluate</span>
-                            <span class="info-box-number">41,410</span>
+                            <span class="info-box-number">{{$totalRevenueSpa}}$ </span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>
@@ -180,6 +180,60 @@
                 </div>
                 <!-- /.col -->
             </div>
+
+                <div class="row">
+                    <div class="clearfix visible-sm-block"></div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-green"><i class="fa fa-star-o"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Revenue NK</span>
+                                <span class="info-box-number">{{$revenueSpaNK}} $</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-red"><i class="fa fa-heart-o"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Revenue TX</span>
+                                <span class="info-box-number">{{$revenueSpaTX}} $</span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-yellow"><i class="fa fa-anchor"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total Product</span>
+                                <span class="info-box-number">{{$totalProduct}} <small><a href="{{route('admin.get.list.product')}}">(View Detail)</a></small></span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                    <!-- fix for small devices only -->
+
+                    <!-- /.col -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-blue"><i class="ion ion-ios-albums"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Total category</span>
+                                <span class="info-box-number">{{$totalUsers}} <small><a href="{{route('admin.get.list.category')}}">(View Detail)</a></small></span>
+                            </div>
+                            <!-- /.info-box-content -->
+                        </div>
+                        <!-- /.info-box -->
+                    </div>
+                    <!-- /.col -->
+                </div>
             @endif
             <!-- /.row -->
             <!-- Admin -->
@@ -214,8 +268,9 @@
                         <div class="info-box">
                             <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
                             <div class="info-box-content">
-                                <span class="info-box-text">Employee</span>
-                                <span class="info-box-number">{{$employeeAdmin}} <small><a href="{{route('admin.get.list.employee')}}">(View Detail)</a></small></span>
+                                <span class="info-box-text">Revenue</span>
+                                <span class="info-box-number">{{$revenueSpa}} $
+                                </span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -323,7 +378,7 @@
                                                     <li>Phone:{{$item->tr_phone}}</li>
                                                 </ul>
                                             </td>
-                                            <td>{{number_format($item->tr_total)}} vnđ</td>
+                                            <td>{{number_format($item->tr_total)}} $</td>
                                             <td>{{$item->created_at}}</td>
 
                                             <td>{{isset($item->spa->spa_name) ? $item->spa->spa_name : '[N\A]'}}</td>
@@ -355,7 +410,7 @@
                                                         <li>Phone:{{$item->tr_phone}}</li>
                                                     </ul>
                                                 </td>
-                                                <td>{{number_format($item->tr_total)}} vnđ</td>
+                                                <td>{{number_format($item->tr_total)}} $</td>
                                                 <td>{{$item->created_at}}</td>
 
                                                 <td>{{isset($item->spa->spa_name) ? $item->spa->spa_name : '[N\A]'}}</td>

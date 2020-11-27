@@ -28,13 +28,11 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                Data Tables
-                <small>advanced tables</small>
+                Schedule Manage
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="#">Tables</a></li>
-                <li class="active">Data tables</li>
+                <li><a href="#">List Schedule</a></li>
             </ol>
         </section>
 
@@ -70,8 +68,8 @@
                     <thead>
                     <tr>
                         <th style="width: 10px">ID</th>
-                        <th>Customer Name</th>
-                        <th>Service</th>
+                        <th>Information</th>
+                        <!-- <th>Service</th> -->
                         <th>Spa Name</th>
                         <th>Status</th>
                         <th colspan=3>Actions</th>
@@ -96,7 +94,7 @@
                                     </li>
                                 </ul>
                             </td>
-                            <td>{{isset($schedule->s_service) ? $schedule->s_service : '[N\A]'}}</td>
+                            <!-- <td>{{isset($schedule->s_service) ? $schedule->s_service : '[N\A]'}}</td> -->
                             <td>{{isset($schedule->spa->spa_name) ? $schedule->spa->spa_name : '[N\A]'}}</td>
                             <td>
                                 <a href="{{ route('admin.get.action.schedule', ['active', $schedule->id]) }}"

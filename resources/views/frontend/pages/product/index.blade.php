@@ -27,6 +27,7 @@
                                 <li class="home">
                                     <a href="/">Home</a>
                                     <span><i class="fa fa-angle-right"></i></span>
+                                    <a>List Product</a>
                                 </li>
                                 {{--                                <li class="category3"><span>{{$cateProduct->cat_name}}</span></li>--}}
                             </ul>
@@ -46,7 +47,7 @@
                         </aside>
                         <aside class="sidebar-content">
                             <div class="sidebar-title" style="margin-top: 50px ">
-                                <h6>Categories</h6>
+                                <h6 style="font-weight: bolder;">Categories</h6>
                             </div>
                             <ul class="sidebar-tags">
                                 @if (isset($categories))

@@ -5,13 +5,16 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 class AdminScheduleController extends Controller
 {
     public function index(Request $request)
     {
-//        $schedules = Schedule::with('users:id,name');
+        $sid = Auth::guard('admins')->user()->spa_id;
+        $schedulesAdmin = Schedule::where('s_spa_id', '=', $sid)->paginate(10);
+
         $schedules = Schedule::whereRaw(1);
         if ($request->id) $schedules->where('id', $request->id);
         if ($request->email) $schedules->where('s_email', 'like', '%' . $request->email . '%');
@@ -19,7 +22,8 @@ class AdminScheduleController extends Controller
         $schedules = $schedules->orderByDesc('id')->paginate(10);
 
         $viewData = [
-            'schedules' => $schedules
+            'schedules' => $schedules,
+            'schedulesAdmin' => $schedulesAdmin
         ];
         return view('admin.schedule.index', $viewData);
     }

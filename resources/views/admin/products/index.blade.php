@@ -20,16 +20,13 @@
 @section('content')
 
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Data Tables
-                <small>advanced tables</small>
+                Product Manage
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="#">Tables</a></li>
-                <li class="active">Data tables</li>
+                <li><a href="#">List Product</a></li>
             </ol>
         </section>
         <div class="back-home">
@@ -42,7 +39,6 @@
                 <div class="col-sm-12">
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">Hover Data Table</h3>
                         </div>
                         <div class="box-header">
                             <h3 class="box-title"></h3>
@@ -100,7 +96,7 @@
                                             <ul>
                                                 <li><b>Name: </b>{{$product->pro_name}}</li>
                                                 <li><b>Amount: </b>{{$product->pro_number}}</li>
-                                                <li><b>Price: </b>{{number_format($product->pro_price)}} VNĐ</li>
+                                                <li><b>Price: </b>{{number_format($product->pro_price)}} $</li>
                                                 <li><span>Review:</span>
                                                     <span class="rating">
                                                         @for ($i = 1; $i <= 5; $i++)

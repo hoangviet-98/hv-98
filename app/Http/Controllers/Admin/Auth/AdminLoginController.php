@@ -19,9 +19,7 @@ class AdminLoginController extends Controller
     {
         $data = $request->only('email', 'password');
         if (Auth::guard('admins')->attempt($data)) {
-//            Auth::user()\
-//            return Auth::guard('admins')->user()->role_id;
-            return redirect()->route('get.dashboard.admin');
+            return redirect()->intended('/admin');
         } else {
             return redirect()->back()->with('status', 'Invalid Email or Password');
         }

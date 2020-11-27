@@ -291,22 +291,11 @@
                                         itemscope=""
                                         itemtype="http://schema.org/Offer"
                                     >
-                                    >
-                                        <link
-                                            itemprop="availability"
-                                            href="http://schema.org/InStock"
-                                        />
-                                        <meta itemprop="priceCurrency" content="VND" />
-                                        <meta itemprop="price" content="140000" />
-                                        <meta
-                                            itemprop="url"
-                                            content="https://tiki.vn/ban-phim-co-day-dell-kb216-den-hang-chinh-hang-p646020.html"
-                                        />
 
                                         <div class="group">
                                             <div class="price-and-icon">
                                                 <p class="price">
-                                                   {{($productDetail->pro_price)}} $
+                                                   Price : {{($productDetail->pro_price)}} $
                                                 </p>
                                             </div>
                                             <div

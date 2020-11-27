@@ -6,10 +6,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 class Admin extends Authenticatable
 {
-    //
     use Notifiable;
-
-//    protected $appends = ['Count_Send_Msg' , 'Avg_Msg_7_Day'];
 
     protected $table = 'admins';
     public $timestamps = false;
@@ -26,7 +23,6 @@ class Admin extends Authenticatable
     {
         return $this->belongsTo(Role::class, 'role_id', 'id');
     }
-
 
     public function spa()
     {

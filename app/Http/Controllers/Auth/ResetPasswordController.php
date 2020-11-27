@@ -39,7 +39,7 @@ class ResetPasswordController extends Controller
 
             Mail::to($account->email)->send(new ResetPasswordEmail($link));
 
-            return redirect()->to('/');
+            return redirect()->to('/home');
         }
         return redirect()->back();
     }
@@ -53,14 +53,14 @@ class ResetPasswordController extends Controller
             ->where('token', $token)
             ->first();
 
-        if($checkToken) return redirect()->to('/');
+        if($checkToken) return redirect()->to('/home');
 
         //check time ton tai token
         $now = Carbon::now();
-        if($now->diffInMinutes($checkToken->create_at) > 3) {
-            DB::table('password_resets')->where('email', $request->email)->delete();
-            return redirect()->to('/');
-        }
+        // if($now->diffInMinutes($checkToken->create_at) > 3) {
+        //     DB::table('password_resets')->where('email', $request->email)->delete();
+        //     return redirect()->to('/home');
+        // }
         return view('auth.passwords.reset');
     }
     public function savePassword(Request $request)
@@ -70,7 +70,7 @@ class ResetPasswordController extends Controller
         $data['password'] = Hash::make($password);
         $email = $request->email;
 
-        if(!$email) return redirect()->to('/');
+        if(!$email) return redirect()->to('/home');
         DB::table('users')->where('email', $email)
             ->update($data);
         DB::table('password_resets')->where('email', $email)->delete();

@@ -8,8 +8,8 @@
         <div style="width: 50%"></div>
     </div>
     <div style="background: #f4f5f5; box-sizing: border-box; padding: 15px; border-top: 1px solid #dedede; border-bottom: 1px solid #dedede">
-        <p>Hello {{$name}}</p>
-        <p>Cam on ban da tin tuong dang ky va su dung dich vu cua Hoang Viet Beauty</p>
+        <p>Hello {{$name}} </p>
+        <p>Thank you for your trust in using Vania Spa's services</p>
     </div>
     <div style="background: #f4f4f5; box-sizing: border-box; padding: 15px">
         <p style="margin: 2px 0; color: #333">Email : vietht098@gmail.com</p>

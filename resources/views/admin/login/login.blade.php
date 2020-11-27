@@ -30,7 +30,7 @@
 <body class="hold-transition login-page" style="  background-color: #fad0c4;">
 <div class="login-box">
     <div class="login-logo">
-        <a href=""><b>Login Hệ Thống ADMIN</b></a>
+        <a href=""><b>Login ADMIN</b></a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">

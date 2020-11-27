@@ -20,13 +20,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Data Tables
-                <small>advanced tables</small>
+                Admins Manage
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li><a href="#">Tables</a></li>
-                <li class="active">Data tables</li>
+                <li><a href="#">List Admin</a></li>
+                <!-- <li class="active">Data tables</li> -->
             </ol>
         </section>
         <div class="back-home">
@@ -40,7 +39,7 @@
                 <div class="col-sm-12">
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">Hover Data Table</h3>
+                            <h3 class="box-title">Admin Account</h3>
                         </div>
                         <div class="box-header">
                             <h3 class="box-title"></h3>

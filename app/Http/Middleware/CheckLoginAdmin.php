@@ -9,10 +9,9 @@ class CheckLoginAdmin
     public function handle($request, Closure $next)
     {
         if (!get_data_user('admins')) {
-            return $next($request);
+            return redirect()->intended('/admin');
         }
-        return redirect()->to('/home');
-
+        return $next($request);
     }
 
 }

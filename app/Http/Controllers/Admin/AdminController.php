@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\HelpersClass\Date;
 use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\Category;
 use App\Models\Employee;
 use App\Models\Product;
 use App\Models\Schedule;
@@ -21,18 +22,39 @@ class AdminController extends Controller
         // Super Admin
         $totalTransactions = Transaction::select('id')->count();
         $transactions = Transaction::paginate(10);
-        // Thong ke trang thai don hang
+        // Order status statistics
         $transactionDefault = Transaction::where('tr_status', 0)->select('id')->count();
         $transactionProcess = Transaction::where('tr_status', 1)->select('id')->count();
         $transactionSuccess = Transaction::where('tr_status', 2)->select('id')->count();
         $transactionCancel = Transaction::where('tr_status', -1)->select('id')->count();
 
         //Admin Role 2
-
         $sid = Auth::guard('admins')->user()->spa_id;
 
         $transactionsAdmin = Transaction::where('tr_spa_id', '=', $sid)->paginate(10);
         $employeeAdmin = Employee::where('emp_spa_id', '=', $sid)->count();
+
+        $totalProduct = Product::select('id')->count();
+        $totalCategory = Category::select('id')->count();
+
+        $totalRevenueSpa =  DB::table('hv_transactions')
+                                ->select('tr_total')
+                                ->sum('tr_total');
+
+        $revenueSpaNK             = DB::table('hv_transactions')
+            ->select('tr_total')
+            ->where('tr_spa_id', '=', 1)
+            ->sum('tr_total');
+        $revenueSpaTX            = DB::table('hv_transactions')
+            ->select('tr_total')
+            ->where('tr_spa_id', '=', 2)
+            ->sum('tr_total');
+
+        $revenueSpa             = DB::table('hv_transactions')
+                                ->select('tr_total')
+                                ->where('tr_spa_id', '=', $sid)
+                                ->sum('tr_total');
+
         $totalTransactionsAdmin = Transaction::where('tr_spa_id', '=', $sid)->count();
         $totalSchedules = Schedule::where('s_spa_id', '=', $sid)->paginate(10);
 
@@ -56,16 +78,12 @@ class AdminController extends Controller
         //total user
         $totalUsers = User::select('id')->count();
 
-        //List transactions.blade.php Admin
-//        $transactions = Transaction::orderByDesc('id')
-//                        ->limit(5)
-//                        ->get();
         // List Top View Product
         $topProduct = Product::orderByDesc('pro_view')
             ->limit(5)
             ->get();
         $listDay = Date::getListDayInMonth();
-        //Doanh thu theo thang done
+        //Revenue Month
         $revenueTransactionMonth = Transaction::where('tr_status', 2)
             ->whereMonth('created_at',date('m'))
             ->select(DB::raw('sum(tr_total) as totalMoney'), DB::raw('DATE(created_at) day'))
@@ -106,9 +124,15 @@ class AdminController extends Controller
             'totalTransactions'             => $totalTransactions,
             'totalArticles'                 => $totalArticles,
             'totalUsers'                    => $totalUsers,
+            'totalProduct'                  => $totalProduct,
             'transactions'                  => $transactions,
             'topProduct'                    => $topProduct,
             'totalSchedules'                => $totalSchedules,
+            'totalCategory'                 => $totalCategory,
+            'revenueSpa'                    => $revenueSpa,
+            'revenueSpaNK'                  => $revenueSpaNK,
+            'revenueSpaTX'                  => $revenueSpaTX,
+            'totalRevenueSpa'               => $totalRevenueSpa,
             'statusTransaction'             => json_encode($statusTransaction),
             'listDay'                       => json_encode($listDay),
             'arrRevenueTransactionMonth'    => json_encode($arrRevenueTransactionMonth),
