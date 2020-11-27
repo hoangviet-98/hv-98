@@ -89,15 +89,65 @@ class AdminController extends Controller
             ->select(DB::raw('sum(tr_total) as totalMoney'), DB::raw('DATE(created_at) day'))
             ->groupBy('day')
             ->get()->toArray();
-//        dump($revenueTransactionMonth);
+
         //receive
         $revenueTransactionMonthDefault  = Transaction::where('tr_status', 0)
             ->whereMonth('created_at',date('m'))
             ->select(DB::raw('sum(tr_total) as totalMoney'), DB::raw('DATE(created_at) day'))
             ->groupBy('day')
             ->get()->toArray();
+
+        // Revenue Month For Spa ID
+        $revenueTransactionMonthSpa = Transaction::where('tr_status', 2)
+            ->where('tr_spa_id', '=', $sid)
+            ->whereMonth('created_at',date('m'))
+            ->select(DB::raw('sum(tr_total) as totalMoney'), DB::raw('DATE(created_at) day'))
+            ->groupBy('day')
+            ->get()->toArray();
+        $revenueTransactionMonthDefaultSpa  = Transaction::where('tr_status', 0)
+            ->where('tr_spa_id', '=', $sid)
+            ->whereMonth('created_at',date('m'))
+            ->select(DB::raw('sum(tr_total) as totalMoney'), DB::raw('DATE(created_at) day'))
+            ->groupBy('day')
+            ->get()->toArray();
+
+//        dump($revenueTransactionMonthSpa);
+        // Revenue Month Default For Spa ID
+
+
         $arrRevenueTransactionMonth = [];
         $arrRevenueTransactionMonthDefault = [];
+//        Revenue
+        $arrRevenueTransactionMonthSpa = [];
+        $arrRevenueTransactionMonthDefaultSpa = [];
+
+
+
+//
+//        TX
+        foreach ($listDay as $day) {
+            $total = 0;
+            foreach ($revenueTransactionMonthSpa as $key => $revenue) {
+                if ($revenue['day'] == $day) {
+                    $total = $revenue['totalMoney'];
+                    break;
+                }
+            }
+            $arrRevenueTransactionMonthSpa[] = (int)$total;
+        }
+
+        foreach ($listDay as $day) {
+            $total = 0;
+            foreach ($revenueTransactionMonthDefaultSpa as $key => $revenue) {
+                if ($revenue['day'] == $day) {
+                    $total = $revenue['totalMoney'];
+                    break;
+                }
+            }
+            $arrRevenueTransactionMonthDefaultSpa[] = (int)$total;
+        }
+//
+
         foreach ($listDay as $day) {
             $total = 0;
             foreach ($revenueTransactionMonth as $key => $revenue) {
@@ -121,27 +171,34 @@ class AdminController extends Controller
         }
 
         $viewData = [
-            'totalTransactions'             => $totalTransactions,
-            'totalArticles'                 => $totalArticles,
-            'totalUsers'                    => $totalUsers,
-            'totalProduct'                  => $totalProduct,
-            'transactions'                  => $transactions,
-            'topProduct'                    => $topProduct,
-            'totalSchedules'                => $totalSchedules,
-            'totalCategory'                 => $totalCategory,
-            'revenueSpa'                    => $revenueSpa,
-            'revenueSpaNK'                  => $revenueSpaNK,
-            'revenueSpaTX'                  => $revenueSpaTX,
-            'totalRevenueSpa'               => $totalRevenueSpa,
-            'statusTransaction'             => json_encode($statusTransaction),
-            'listDay'                       => json_encode($listDay),
-            'arrRevenueTransactionMonth'    => json_encode($arrRevenueTransactionMonth),
-            'arrRevenueTransactionMonthDefault'    => json_encode($arrRevenueTransactionMonthDefault),
+            'totalTransactions'                       => $totalTransactions,
+            'totalArticles'                           => $totalArticles,
+            'totalUsers'                              => $totalUsers,
+            'totalProduct'                            => $totalProduct,
+            'transactions'                            => $transactions,
+            'topProduct'                              => $topProduct,
+            'totalSchedules'                          => $totalSchedules,
+            'totalCategory'                           => $totalCategory,
+            'revenueSpa'                              => $revenueSpa,
+            'revenueSpaNK'                            => $revenueSpaNK,
+            'revenueSpaTX'                            => $revenueSpaTX,
+            'totalRevenueSpa'                         => $totalRevenueSpa,
+            'statusTransaction'                       => json_encode($statusTransaction),
+            'listDay'                                 => json_encode($listDay),
+            'arrRevenueTransactionMonth'              => json_encode($arrRevenueTransactionMonth),
+            'arrRevenueTransactionMonthDefault'       => json_encode($arrRevenueTransactionMonthDefault),
+            'arrRevenueTransactionMonthSpa'           => json_encode($arrRevenueTransactionMonthSpa),
+            'arrRevenueTransactionMonthDefaultSpa'    => json_encode($arrRevenueTransactionMonthDefaultSpa),
 
-            //Admin
-            'totalTransactionsAdmin' => $totalTransactionsAdmin,
-            'transactionsAdmin' => $transactionsAdmin,
-            'employeeAdmin' => $employeeAdmin,
+
+            //Super Admin
+            'totalTransactionsAdmin'                  => $totalTransactionsAdmin,
+            'transactionsAdmin'                       => $transactionsAdmin,
+            'employeeAdmin'                           => $employeeAdmin,
+            // Admin
+//            'revenueTransactionMonthSpa'            => json_encode($revenueTransactionMonthSpa),
+//            'revenueTransactionMonthDefaultSpa'     => json_encode($revenueTransactionMonthDefaultSpa),
+
 
 
         ];

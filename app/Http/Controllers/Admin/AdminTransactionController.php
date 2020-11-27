@@ -14,7 +14,6 @@ class AdminTransactionController extends Controller
 {
     public function index(Request $request)
     {
-
         $sid =  Auth::guard('admins')->user()->spa_id;
         $transactionsAdmin = Transaction::where('tr_spa_id', '=', $sid)->paginate(10);
 
@@ -27,6 +26,7 @@ class AdminTransactionController extends Controller
 
         if($request->export) {
             //Call export excel
+
             return \Excel::download(new TransactionExport, 'transaction.xlsx');
 
         }

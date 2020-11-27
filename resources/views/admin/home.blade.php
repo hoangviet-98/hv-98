@@ -237,11 +237,10 @@
             @endif
             <!-- /.row -->
             <!-- Admin -->
-            <!-- Info boxes -->
             @if (Auth::guard('admins')->user()->role_id===2)
                 <div class="row">
                     <div class="clearfix visible-sm-block"></div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="info-box">
                             <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
                             <div class="info-box-content">
@@ -252,7 +251,7 @@
                         </div>
                         <!-- /.info-box -->
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="info-box">
                             <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
                             <div class="info-box-content">
@@ -264,7 +263,7 @@
                         <!-- /.info-box -->
                     </div>
                     <!-- /.col -->
-                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="info-box">
                             <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
                             <div class="info-box-content">
@@ -280,20 +279,27 @@
                     <!-- fix for small devices only -->
 
                     <!-- /.col -->
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">New Members</span>
-                                <span class="info-box-number">{{$totalUsers}} <small><a href="{{route('admin.get.list.user')}}">(View Detail)</a></small></span>
+                </div>
+                <div class="row" style="margin-bottom: 30px">
+                    <div class="col-sm-8">
+                        <figure class="highcharts-figure">
+                            <div id="container2" data-list-day="{{$listDay}}"
+                                 data-money-default={{$arrRevenueTransactionMonthDefaultSpa}}
+                                     data-money={{$arrRevenueTransactionMonthSpa}}>
                             </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
+                        </figure>
                     </div>
-                    <!-- /.col -->
+                    <div class="col-sm-4">
+                        <figure class="highcharts-figure">
+                            <div id="container" data-json="{{$statusTransaction}}">
+
+                            </div>
+
+                        </figure>
+                    </div>
                 </div>
             @endif
+            <!-- Info boxes -->
 
             <div class="row" style="margin-bottom: 30px">
                 <div class="col-sm-8">
@@ -313,33 +319,11 @@
                     </figure>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- /.box -->
-                </div>
-                <!-- /.col -->
-            </div>
             <!-- /.row -->
             <!-- Main row -->
             <div class="row">
                 <!-- Left col -->
                 <div class="col-md-8">
-                    <!-- MAP & BOX PANE -->
-                    <!-- /.box -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <!-- DIRECT CHAT -->
-                            <!--/.direct-chat -->
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-md-6">
-                            <!-- USERS LIST -->
-                            <!--/.box -->
-                        </div>
-                        <!-- /.col -->
-                    </div>
-                    <!-- /.row -->
-                    <!-- TABLE: LATEST ORDERS -->
                     <div class="box box-info">
                         <div class="box-header with-border">
                             <h3 class="box-title">Latest Orders</h3>

@@ -44,7 +44,6 @@
                                     <th>Article Title</th>
                                     <th>Description</th>
                                     <th>Content</th>
-                                    <th>Menu</th>
                                     <th>Title seo</th>
                                     <th>Avatar</th>
                                     <th colspan=3>Actions</th>
@@ -57,7 +56,6 @@
                                         <th>{{$article->a_name}}</th>
                                         <td>{{$article->a_description}}</td>
                                         <td>{{$article->a_content}}</td>
-                                        <td>{{$article->a_menu_id}}</td>
                                         <td>{{$article->a_title_seo}}</td>
                                         <td>
                                             <img src="{{pare_url_file($article->a_avatar)}}" alt="" class="responsive">

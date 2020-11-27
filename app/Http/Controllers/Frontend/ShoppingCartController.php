@@ -86,6 +86,7 @@ class ShoppingCartController extends FrontendController
     public function getFormPay()
     {
         $products = Cart::content();
+
         $spa = $this->getSpa();
 
         return view('frontend.components.pay', compact('products', 'spa'));

@@ -165,12 +165,12 @@
                             </div><div class="form-group" style="margin-left: 0px;">
                                 <div class="col-md-12"><strong>Note<span class="cRed">(*)</span></strong></div>
                                 <div class="col-md-12">
-                                    <textarea name="tr_note" cols="67,8" required="" rows="5"></textarea>
+                                    <textarea name="tr_note" cols="67,8" required rows="5" style="width: 96%"></textarea>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label style="margin-left: 20px">Spa<span class="cRed">(*)</span></label>
-                                <div class="col-md-12"><select class="form-control" name="tr_spa_id" required="">
+                                <div class="col-md-12"><select class="form-control" name="tr_spa_id" required>
                                 <option value="">---Select a Spa branch---</option>
                                 @foreach ($spa as $spa_id)
                                     <option value="{{ $spa_id->id}}">{{$spa_id->spa_name}}</option>
@@ -179,27 +179,27 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Phone Number<span class="cRed">(*)</span></strong></div>
-                                <div class="col-md-12"><input type="text" required="" name="tr_phone" class="form-control"
+                                <div class="col-md-12"><input type="text" required name="tr_phone" class="form-control"
                                                               value="{{get_data_user('web','phone')}}"/></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Email Address<span class="cRed">(*)</span></strong></div>
-                                <div class="col-md-12"><input type="text" required="" name="tr_email" class="form-control"
+                                <div class="col-md-12"><input type="text" required name="tr_email" class="form-control"
                                                               value="{{get_data_user('web','email')}}"/></div>
                             </div>
                             <div class="pay" style="display: flex">
                                 <div class="form-group">
                                 <div class="col-md-12">
-                                    <button style="height: 36px; border-radius: 22px; margin-left: 73px" type="submit" class="btn-danger">Order confirmation</button>
+                                    <button style="height: 36px; border-radius: 22px; margin-left: 4px" type="submit" class="btn-danger">Order confirmation</button>
                                 </div>
                             </div>
                               <div id="paypal-button-container" style="margin-left: 30px">
-                                  
+
                               </div>
                             </div>
 
 
-                            
+
                         </div>
                     </div>
                     <!--SHIPPING METHOD END-->

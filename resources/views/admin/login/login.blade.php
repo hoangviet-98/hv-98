@@ -27,10 +27,10 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition login-page" style="  background-color: #fad0c4;">
-<div class="login-box">
-    <div class="login-logo">
-        <a href=""><b>Login ADMIN</b></a>
+<body class="hold-transition login-page" style="height: 0">
+<div class="login-box" >
+    <div class="login-logo" >
+        <a href="" ><b>Login ADMIN</b></a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">

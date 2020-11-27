@@ -199,74 +199,7 @@
                                     </tbody>
                                 @endif
 <!-- Role = 1 - NK -->
-                                @if (Auth::guard('admins')->user()->role_id===1)
-                                    <tbody>
-                                    @foreach($transactionsAdmin as $item)
-                                        <tr>
-                                            <th>{{$item->id}}</th>
-                                            <td>
-                                                <ul style="text-align: left">
-                                                    <li>
-                                                        Name: {{isset($item->users->name) ? $item->users->name : '[N\A]'}}</li>
-                                                    <li>
-                                                        Email: {{isset($item->tr_email) ? $item->tr_email : '[N\A]'}}</li>
-                                                    <li>Address: {{$item->tr_address}}</li>
-                                                    <li>Phone:{{$item->tr_phone}}</li>
-                                                </ul>
-                                            </td>
-                                            <td>{{number_format($item->tr_total)}} $</td>
-                                            <td>{{$item->created_at}}</td>
 
-                                            <td>{{isset($item->spa->spa_name) ? $item->spa->spa_name : '[N\A]'}}</td>
-                                            <td>
-                                                <a href="{{ route('admin.get.action.transactions', ['active', $item->id]) }}"
-                                                   class="label {{$item->getStatus($item->tr_status ) ['class'] }} ">
-
-                                                    {{$item->getStatus($item->tr_status) ['name'] }}
-
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a data-id="{{$item->id}}"
-                                                   href="{{route('ajax.admin.transactions.detail', $item->id)}}" class="js-preview-transaction"
-                                                   style="padding: 5px 10px; border: 1px solid #eee; font-size: 12px;"
-                                                ><i class="fa fa-eye"></i></a>
-
-                                                <div class="btn-group" style="">
-                                                    <button type="button" class="btn btn-success btn-xs">Action</button>
-                                                    <button type="button" class="btn btn-success btn-xs dropdown-toggle"
-                                                            data-toggle="dropdown" aria-expanded="false">
-                                                        <span class="caret"></span>
-                                                        <span class="sr-only">Toogle Dropdown</span>
-                                                    </button>
-                                                    <ul class="dropdown-menu" role="menu">
-                                                        <li><a href=""
-                                                               style="padding: 5px 10px; border: 1px solid #eee; font-size: 12px; color:red"
-                                                               data-url="{{ route('admin.get.delete.transactions', $item->id)}}"
-                                                               class="fa fa-trash-o action_delete">Delete </a></li>
-                                                        <li>
-                                                            <a href="{{route('admin.get.action.transactions', ['process', $item->id])}}">
-                                                                <i class="fa fa-ban"></i> Delivering
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="{{route('admin.get.action.transactions', ['success', $item->id])}}">
-                                                                <i class="fa fa-ban"></i> Delivered
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="{{route('admin.get.action.transactions', ['cancel', $item->id])}}">
-                                                                <i class="fa fa-ban"></i> Cancelled
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                @csrf
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                @endif
                             </table>
                             <div style="text-align: center">
                                 {!! $transactions->links() !!}

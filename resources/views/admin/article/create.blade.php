@@ -97,11 +97,7 @@
                             <div class="form-group">
                                 <label>Content:</label>
                                 <textarea name="a_content" class="form-control my-editor" rows="8"></textarea>
-                                {{--                                <input type="text" class="form-control"--}}
-{{--                                       name="a_content"--}}
-{{--                                       value="{{old('a_content')}}"--}}
-{{--                                       placeholder="Please input content"--}}
-{{--                                >--}}
+
                                 @if($errors->has('a_content'))
                                     <span class="error-text">
                                 {{$errors->first('a_content')}}
@@ -139,20 +135,6 @@
                                         src="https://www.globe2.net/wp-content/plugins/accelerated-mobile-pages/images/SD-default-image.png"
                                         id="out_img" style="height: 150px; width: auto; margin-top: 30px">
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label>Category</label>
-                                <select class="form-control" name="pro_category_id">
-                                    <option value="">---Please choose Menu---</option>
-                                    @foreach ($hv_menu as $menu_id)
-                                        <option value="{{ $menu_id->id}}">{{$menu_id->mu_name}} </option>
-                                    @endforeach
-                                </select>
-                                @if($errors->has('pro_category_id'))
-                                    <span class="error-text">
-                                {{$errors->first('pro_category_id')}}
-                                    </span>
-                                @endif
                             </div>
                             <div class="form-group">
                                 <label>Image:</label>

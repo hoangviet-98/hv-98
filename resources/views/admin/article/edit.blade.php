@@ -97,15 +97,6 @@
                                    name="a_title_seo" value="{{$hv_article->a_title_seo}}"
                             >
                         </div>
-                        <div class="form-group">
-                            <label>Category</label>
-                            <select class="form-control" name="a_menu_id">
-                                <option value="">---Please choose Menu---</option>
-                                @foreach ($hv_menu as $menu_id)
-                                    <option value="{{ $menu_id->id}}">{{$menu_id->mu_name}} </option>
-                                @endforeach
-                            </select>
-                        </div>
 
                         <div class="form-group">
                             <img

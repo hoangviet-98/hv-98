@@ -16,7 +16,6 @@
         $i = 1 ?>
 
         @foreach($shopping as $key => $item)
-            {{--         {{dd($key)}}--}}
             <tr>
                 <th scope="row" id="rowId">{{$i}}</th>
                 <td><img style="width: 150px; height: 100px" src="{{asset(pare_url_file($item->options->avatar))}}"></td>
