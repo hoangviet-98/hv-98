@@ -6,13 +6,15 @@ use Illuminate\Support\Facades\Route;
 include('route_admin.php');
 include('route_user.php');
 Auth::routes();
+Route::post('login', 'Auth\LoginController@postLogin')->name('post.login');
 
 Route::group(['namespace' => 'Auth', 'prefix' => 'account'], function () {
     Route::get('register', 'RegisterController@getRegister')->name('get.register');
     Route::post('register', 'RegisterController@postRegister')->name('post.register');
 
     Route::get('login', 'LoginController@getLogin')->name('get.login');
-    Route::post('login', 'LoginController@postLogin')->name('post.login');
+
+//    Route::post('login', 'LoginController@postLogin')->name('post.login');
 
     Route::get('logout', 'LoginController@getLogout')->name('get.logout.user');
     Route::get('reset-password', 'ResetPasswordController@getEmailReset')->name('get.email_reset_password');
@@ -24,7 +26,7 @@ Route::group(['namespace' => 'Auth', 'prefix' => 'account'], function () {
 });
 
 Route::group(['namespace' => 'Frontend'], function (){
-   Route::get('/home','HomeController@index')->name('get.home');
+   Route::get('/','HomeController@index')->name('get.home');
 
 //   Route::get('/404','HomeController@error_page')->name('get.errors');
 

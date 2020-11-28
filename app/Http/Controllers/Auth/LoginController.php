@@ -30,10 +30,19 @@ class LoginController extends Controller
 
     public function postLogin(RequestLogin $request)
     {
-        if (Auth::guard('users')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return view('frontend.pages.home.index');
+//        echo "dsadsad";
+//        return  "dasdas";
+//        if (Auth::guard('users')->attempt(['email' => $request->email, 'password' => $request->password])) {
+        $credentials = $request->only('email', 'password');
+        if(    Auth::attempt($credentials)  ) {
+//            return"test";
+//            return view('frontend.pages.home.index');
+//            redirect('/');
 //            return redirect()->intended('/');
+            return  redirect("/");
+//            return "dasd";
         }
+//        return "1dsad";
         return redirect()->back();
     }
 

@@ -24,7 +24,7 @@
         <p><a style="margin: 19px"
               href="{{ route('admin.get.list.employee') }}">
                 <i class="fa fa-arrow-circle-left" > </i>
-                Về danh sách</a></p>
+                Back</a></p>
         </div>
         <section class="content">
         <div class="row">
@@ -58,15 +58,16 @@
                             <label for="emp_salary">Salary:</label>
                             <input type="text" class="form-control" name="emp_salary"/>
                         </div>
-                        <div class="form-group">
-                            <label>Spa</label>
-                            <select class="form-control" name="emp_spa_id">
-                                <option value="">---Please choose Spa---</option>
-                                @foreach ($hv_spa as $spa_id)
-                                    <option value="{{ $spa_id->id}}">{{$spa_id->spa_name}} </option>
-                                @endforeach
-                            </select>
-                        </div>
+                    <input type="hidden" name="emp_spa_id" value="{{Auth::guard('admins')->user()->spa_id}}">
+{{--                        <div class="form-group">--}}
+{{--                            <label>Spa</label>--}}
+{{--                            <select class="form-control" name="emp_spa_id">--}}
+{{--                                <option value="">---Please choose Spa---</option>--}}
+{{--                                @foreach ($hv_spa as $spa_id)--}}
+{{--                                    <option value="{{ $spa_id->id}}">{{$spa_id->spa_name}} </option>--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
                 </div>
                 <button type="submit" class="btn btn-primary">Add Employee</button>
             </form>
